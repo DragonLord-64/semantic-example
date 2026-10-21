@@ -1,0 +1,64 @@
+{"id": "watch-noun-09", "sentence": "Was that watch expensive?", "target": "watch", "target_index": 2, "label": "noun", "split": "test", "template_family": "noun_subject_question"}
+{"id": "watch-noun-10", "sentence": "What an expensive watch!", "target": "watch", "target_index": 3, "label": "noun", "split": "test", "template_family": "noun_exclamation"}
+{"id": "watch-verb-09", "sentence": "Do you watch the match?", "target": "watch", "target_index": 2, "label": "verb", "split": "test", "template_family": "verb_question"}
+{"id": "watch-verb-10", "sentence": "When we watch the parade, we stay quiet.", "target": "watch", "target_index": 2, "label": "verb", "split": "test", "template_family": "verb_subordinate_clause"}
+{"id": "play-noun-09", "sentence": "Was that play funny?", "target": "play", "target_index": 2, "label": "noun", "split": "test", "template_family": "noun_subject_question"}
+{"id": "play-noun-10", "sentence": "What a funny play!", "target": "play", "target_index": 3, "label": "noun", "split": "test", "template_family": "noun_exclamation"}
+{"id": "play-verb-09", "sentence": "Do you play football?", "target": "play", "target_index": 2, "label": "verb", "split": "test", "template_family": "verb_question"}
+{"id": "play-verb-10", "sentence": "When we play in the garden, we laugh together.", "target": "play", "target_index": 2, "label": "verb", "split": "test", "template_family": "verb_subordinate_clause"}
+{"id": "call-noun-09", "sentence": "Was that call brief?", "target": "call", "target_index": 2, "label": "noun", "split": "test", "template_family": "noun_subject_question"}
+{"id": "call-noun-10", "sentence": "What a brief call!", "target": "call", "target_index": 3, "label": "noun", "split": "test", "template_family": "noun_exclamation"}
+{"id": "call-verb-09", "sentence": "Do you call your parents?", "target": "call", "target_index": 2, "label": "verb", "split": "test", "template_family": "verb_question"}
+{"id": "call-verb-10", "sentence": "When we call for help, someone answers.", "target": "call", "target_index": 2, "label": "verb", "split": "test", "template_family": "verb_subordinate_clause"}
+{"id": "walk-noun-09", "sentence": "Was that walk long?", "target": "walk", "target_index": 2, "label": "noun", "split": "test", "template_family": "noun_subject_question"}
+{"id": "walk-noun-10", "sentence": "What a long walk!", "target": "walk", "target_index": 3, "label": "noun", "split": "test", "template_family": "noun_exclamation"}
+{"id": "walk-verb-09", "sentence": "Do you walk to work?", "target": "walk", "target_index": 2, "label": "verb", "split": "test", "template_family": "verb_question"}
+{"id": "walk-verb-10", "sentence": "When we walk through town, we notice new shops.", "target": "walk", "target_index": 2, "label": "verb", "split": "test", "template_family": "verb_subordinate_clause"}
+{"id": "run-noun-09", "sentence": "Was that run long?", "target": "run", "target_index": 2, "label": "noun", "split": "test", "template_family": "noun_subject_question"}
+{"id": "run-noun-10", "sentence": "What a long run!", "target": "run", "target_index": 3, "label": "noun", "split": "test", "template_family": "noun_exclamation"}
+{"id": "run-verb-09", "sentence": "Do you run after school?", "target": "run", "target_index": 2, "label": "verb", "split": "test", "template_family": "verb_question"}
+{"id": "run-verb-10", "sentence": "When we run toward the finish, our friends cheer.", "target": "run", "target_index": 2, "label": "verb", "split": "test", "template_family": "verb_subordinate_clause"}
+{"id": "drink-noun-09", "sentence": "Was that drink cold?", "target": "drink", "target_index": 2, "label": "noun", "split": "test", "template_family": "noun_subject_question"}
+{"id": "drink-noun-10", "sentence": "What a cold drink!", "target": "drink", "target_index": 3, "label": "noun", "split": "test", "template_family": "noun_exclamation"}
+{"id": "drink-verb-09", "sentence": "Do you drink milk?", "target": "drink", "target_index": 2, "label": "verb", "split": "test", "template_family": "verb_question"}
+{"id": "drink-verb-10", "sentence": "When we drink after exercise, we feel refreshed.", "target": "drink", "target_index": 2, "label": "verb", "split": "test", "template_family": "verb_subordinate_clause"}
+{"id": "kick-noun-09", "sentence": "Was that kick powerful?", "target": "kick", "target_index": 2, "label": "noun", "split": "test", "template_family": "noun_subject_question"}
+{"id": "kick-noun-10", "sentence": "What a powerful kick!", "target": "kick", "target_index": 3, "label": "noun", "split": "test", "template_family": "noun_exclamation"}
+{"id": "kick-verb-09", "sentence": "Do you kick with your left foot?", "target": "kick", "target_index": 2, "label": "verb", "split": "test", "template_family": "verb_question"}
+{"id": "kick-verb-10", "sentence": "When we kick during practice, the coach gives advice.", "target": "kick", "target_index": 2, "label": "verb", "split": "test", "template_family": "verb_subordinate_clause"}
+{"id": "park-noun-09", "sentence": "Was that park peaceful?", "target": "park", "target_index": 2, "label": "noun", "split": "test", "template_family": "noun_subject_question"}
+{"id": "park-noun-10", "sentence": "What a peaceful park!", "target": "park", "target_index": 3, "label": "noun", "split": "test", "template_family": "noun_exclamation"}
+{"id": "park-verb-09", "sentence": "Do you park near home?", "target": "park", "target_index": 2, "label": "verb", "split": "test", "template_family": "verb_question"}
+{"id": "park-verb-10", "sentence": "When we park beside the road, we check the signs.", "target": "park", "target_index": 2, "label": "verb", "split": "test", "template_family": "verb_subordinate_clause"}
+{"id": "plant-noun-09", "sentence": "Was that plant healthy?", "target": "plant", "target_index": 2, "label": "noun", "split": "test", "template_family": "noun_subject_question"}
+{"id": "plant-noun-10", "sentence": "What a healthy plant!", "target": "plant", "target_index": 3, "label": "noun", "split": "test", "template_family": "noun_exclamation"}
+{"id": "plant-verb-09", "sentence": "Do you plant vegetables?", "target": "plant", "target_index": 2, "label": "verb", "split": "test", "template_family": "verb_question"}
+{"id": "plant-verb-10", "sentence": "When we plant in spring, the soil feels warm.", "target": "plant", "target_index": 2, "label": "verb", "split": "test", "template_family": "verb_subordinate_clause"}
+{"id": "dance-noun-09", "sentence": "Was that dance lively?", "target": "dance", "target_index": 2, "label": "noun", "split": "test", "template_family": "noun_subject_question"}
+{"id": "dance-noun-10", "sentence": "What a lively dance!", "target": "dance", "target_index": 3, "label": "noun", "split": "test", "template_family": "noun_exclamation"}
+{"id": "dance-verb-09", "sentence": "Do you dance on weekends?", "target": "dance", "target_index": 2, "label": "verb", "split": "test", "template_family": "verb_question"}
+{"id": "dance-verb-10", "sentence": "When we dance at the festival, the music sounds louder.", "target": "dance", "target_index": 2, "label": "verb", "split": "test", "template_family": "verb_subordinate_clause"}
+{"id": "brush-noun-09", "sentence": "Was that brush soft?", "target": "brush", "target_index": 2, "label": "noun", "split": "test", "template_family": "noun_subject_question"}
+{"id": "brush-noun-10", "sentence": "What a soft brush!", "target": "brush", "target_index": 3, "label": "noun", "split": "test", "template_family": "noun_exclamation"}
+{"id": "brush-verb-09", "sentence": "Do you brush your teeth?", "target": "brush", "target_index": 2, "label": "verb", "split": "test", "template_family": "verb_question"}
+{"id": "brush-verb-10", "sentence": "When we brush the pony, the pony stands still.", "target": "brush", "target_index": 2, "label": "verb", "split": "test", "template_family": "verb_subordinate_clause"}
+{"id": "wave-noun-09", "sentence": "Was that wave huge?", "target": "wave", "target_index": 2, "label": "noun", "split": "test", "template_family": "noun_subject_question"}
+{"id": "wave-noun-10", "sentence": "What a huge wave!", "target": "wave", "target_index": 3, "label": "noun", "split": "test", "template_family": "noun_exclamation"}
+{"id": "wave-verb-09", "sentence": "Do you wave to the neighbors?", "target": "wave", "target_index": 2, "label": "verb", "split": "test", "template_family": "verb_question"}
+{"id": "wave-verb-10", "sentence": "When we wave goodbye, our friends greet us.", "target": "wave", "target_index": 2, "label": "verb", "split": "test", "template_family": "verb_subordinate_clause"}
+{"id": "smile-noun-09", "sentence": "Was that smile warm?", "target": "smile", "target_index": 2, "label": "noun", "split": "test", "template_family": "noun_subject_question"}
+{"id": "smile-noun-10", "sentence": "What a warm smile!", "target": "smile", "target_index": 3, "label": "noun", "split": "test", "template_family": "noun_exclamation"}
+{"id": "smile-verb-09", "sentence": "Do you smile when you arrive?", "target": "smile", "target_index": 2, "label": "verb", "split": "test", "template_family": "verb_question"}
+{"id": "smile-verb-10", "sentence": "When we smile at the visitors, they seem happy.", "target": "smile", "target_index": 2, "label": "verb", "split": "test", "template_family": "verb_subordinate_clause"}
+{"id": "answer-noun-09", "sentence": "Was that answer clear?", "target": "answer", "target_index": 2, "label": "noun", "split": "test", "template_family": "noun_subject_question"}
+{"id": "answer-noun-10", "sentence": "What a clear answer!", "target": "answer", "target_index": 3, "label": "noun", "split": "test", "template_family": "noun_exclamation"}
+{"id": "answer-verb-09", "sentence": "Do you answer the teacher?", "target": "answer", "target_index": 2, "label": "verb", "split": "test", "template_family": "verb_question"}
+{"id": "answer-verb-10", "sentence": "When we answer in class, the teacher listens.", "target": "answer", "target_index": 2, "label": "verb", "split": "test", "template_family": "verb_subordinate_clause"}
+{"id": "dream-noun-09", "sentence": "Was that dream strange?", "target": "dream", "target_index": 2, "label": "noun", "split": "test", "template_family": "noun_subject_question"}
+{"id": "dream-noun-10", "sentence": "What a strange dream!", "target": "dream", "target_index": 3, "label": "noun", "split": "test", "template_family": "noun_exclamation"}
+{"id": "dream-verb-09", "sentence": "Do you dream in color?", "target": "dream", "target_index": 2, "label": "verb", "split": "test", "template_family": "verb_question"}
+{"id": "dream-verb-10", "sentence": "When we dream about dragons, anything seems possible.", "target": "dream", "target_index": 2, "label": "verb", "split": "test", "template_family": "verb_subordinate_clause"}
+{"id": "light-noun-09", "sentence": "Was that light bright?", "target": "light", "target_index": 2, "label": "noun", "split": "test", "template_family": "noun_subject_question"}
+{"id": "light-noun-10", "sentence": "What a bright light!", "target": "light", "target_index": 3, "label": "noun", "split": "test", "template_family": "noun_exclamation"}
+{"id": "light-verb-09", "sentence": "Do you light the torch?", "target": "light", "target_index": 2, "label": "verb", "split": "test", "template_family": "verb_question"}
+{"id": "light-verb-10", "sentence": "When we light the campfire, the wood begins to glow.", "target": "light", "target_index": 2, "label": "verb", "split": "test", "template_family": "verb_subordinate_clause"}

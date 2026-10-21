@@ -1,0 +1,64 @@
+{"id": "watch-noun-07", "sentence": "Alex's watch tells the time.", "target": "watch", "target_index": 1, "label": "noun", "split": "validation", "template_family": "possessive_noun_subject"}
+{"id": "watch-noun-08", "sentence": "We talked about the watch.", "target": "watch", "target_index": 4, "label": "noun", "split": "validation", "template_family": "noun_prepositional_object"}
+{"id": "watch-verb-07", "sentence": "I want to watch the sunset.", "target": "watch", "target_index": 3, "label": "verb", "split": "validation", "template_family": "verb_infinitive"}
+{"id": "watch-verb-08", "sentence": "We do not watch scary films.", "target": "watch", "target_index": 3, "label": "verb", "split": "validation", "template_family": "verb_negation"}
+{"id": "play-noun-07", "sentence": "Alex's play ends at nine.", "target": "play", "target_index": 1, "label": "noun", "split": "validation", "template_family": "possessive_noun_subject"}
+{"id": "play-noun-08", "sentence": "We talked about the play.", "target": "play", "target_index": 4, "label": "noun", "split": "validation", "template_family": "noun_prepositional_object"}
+{"id": "play-verb-07", "sentence": "I want to play the drums.", "target": "play", "target_index": 3, "label": "verb", "split": "validation", "template_family": "verb_infinitive"}
+{"id": "play-verb-08", "sentence": "We do not play loud music.", "target": "play", "target_index": 3, "label": "verb", "split": "validation", "template_family": "verb_negation"}
+{"id": "call-noun-07", "sentence": "Alex's call lasted ten minutes.", "target": "call", "target_index": 1, "label": "noun", "split": "validation", "template_family": "possessive_noun_subject"}
+{"id": "call-noun-08", "sentence": "We talked about the call.", "target": "call", "target_index": 4, "label": "noun", "split": "validation", "template_family": "noun_prepositional_object"}
+{"id": "call-verb-07", "sentence": "I want to call my brother.", "target": "call", "target_index": 3, "label": "verb", "split": "validation", "template_family": "verb_infinitive"}
+{"id": "call-verb-08", "sentence": "We do not call strangers.", "target": "call", "target_index": 3, "label": "verb", "split": "validation", "template_family": "verb_negation"}
+{"id": "walk-noun-07", "sentence": "Alex's walk takes an hour.", "target": "walk", "target_index": 1, "label": "noun", "split": "validation", "template_family": "possessive_noun_subject"}
+{"id": "walk-noun-08", "sentence": "We talked about the walk.", "target": "walk", "target_index": 4, "label": "noun", "split": "validation", "template_family": "noun_prepositional_object"}
+{"id": "walk-verb-07", "sentence": "I want to walk to the beach.", "target": "walk", "target_index": 3, "label": "verb", "split": "validation", "template_family": "verb_infinitive"}
+{"id": "walk-verb-08", "sentence": "We do not walk on the grass.", "target": "walk", "target_index": 3, "label": "verb", "split": "validation", "template_family": "verb_negation"}
+{"id": "run-noun-07", "sentence": "Alex's run starts at noon.", "target": "run", "target_index": 1, "label": "noun", "split": "validation", "template_family": "possessive_noun_subject"}
+{"id": "run-noun-08", "sentence": "We talked about the run.", "target": "run", "target_index": 4, "label": "noun", "split": "validation", "template_family": "noun_prepositional_object"}
+{"id": "run-verb-07", "sentence": "I want to run a small shop.", "target": "run", "target_index": 3, "label": "verb", "split": "validation", "template_family": "verb_infinitive"}
+{"id": "run-verb-08", "sentence": "We do not run in the hallway.", "target": "run", "target_index": 3, "label": "verb", "split": "validation", "template_family": "verb_negation"}
+{"id": "drink-noun-07", "sentence": "Alex's drink tastes sweet.", "target": "drink", "target_index": 1, "label": "noun", "split": "validation", "template_family": "possessive_noun_subject"}
+{"id": "drink-noun-08", "sentence": "We talked about the drink.", "target": "drink", "target_index": 4, "label": "noun", "split": "validation", "template_family": "noun_prepositional_object"}
+{"id": "drink-verb-07", "sentence": "I want to drink hot chocolate.", "target": "drink", "target_index": 3, "label": "verb", "split": "validation", "template_family": "verb_infinitive"}
+{"id": "drink-verb-08", "sentence": "We do not drink coffee at night.", "target": "drink", "target_index": 3, "label": "verb", "split": "validation", "template_family": "verb_negation"}
+{"id": "kick-noun-07", "sentence": "Alex's kick sent the ball flying.", "target": "kick", "target_index": 1, "label": "noun", "split": "validation", "template_family": "possessive_noun_subject"}
+{"id": "kick-noun-08", "sentence": "We talked about the kick.", "target": "kick", "target_index": 4, "label": "noun", "split": "validation", "template_family": "noun_prepositional_object"}
+{"id": "kick-verb-07", "sentence": "I want to kick a ball around.", "target": "kick", "target_index": 3, "label": "verb", "split": "validation", "template_family": "verb_infinitive"}
+{"id": "kick-verb-08", "sentence": "We do not kick the furniture.", "target": "kick", "target_index": 3, "label": "verb", "split": "validation", "template_family": "verb_negation"}
+{"id": "park-noun-07", "sentence": "Alex's park closes at dusk.", "target": "park", "target_index": 1, "label": "noun", "split": "validation", "template_family": "possessive_noun_subject"}
+{"id": "park-noun-08", "sentence": "We talked about the park.", "target": "park", "target_index": 4, "label": "noun", "split": "validation", "template_family": "noun_prepositional_object"}
+{"id": "park-verb-07", "sentence": "I want to park near the lake.", "target": "park", "target_index": 3, "label": "verb", "split": "validation", "template_family": "verb_infinitive"}
+{"id": "park-verb-08", "sentence": "We do not park on the bridge.", "target": "park", "target_index": 3, "label": "verb", "split": "validation", "template_family": "verb_negation"}
+{"id": "plant-noun-07", "sentence": "Alex's plant needs more water.", "target": "plant", "target_index": 1, "label": "noun", "split": "validation", "template_family": "possessive_noun_subject"}
+{"id": "plant-noun-08", "sentence": "We talked about the plant.", "target": "plant", "target_index": 4, "label": "noun", "split": "validation", "template_family": "noun_prepositional_object"}
+{"id": "plant-verb-07", "sentence": "I want to plant roses.", "target": "plant", "target_index": 3, "label": "verb", "split": "validation", "template_family": "verb_infinitive"}
+{"id": "plant-verb-08", "sentence": "We do not plant trees in winter.", "target": "plant", "target_index": 3, "label": "verb", "split": "validation", "template_family": "verb_negation"}
+{"id": "dance-noun-07", "sentence": "Alex's dance ends at midnight.", "target": "dance", "target_index": 1, "label": "noun", "split": "validation", "template_family": "possessive_noun_subject"}
+{"id": "dance-noun-08", "sentence": "We talked about the dance.", "target": "dance", "target_index": 4, "label": "noun", "split": "validation", "template_family": "noun_prepositional_object"}
+{"id": "dance-verb-07", "sentence": "I want to dance at the party.", "target": "dance", "target_index": 3, "label": "verb", "split": "validation", "template_family": "verb_infinitive"}
+{"id": "dance-verb-08", "sentence": "We do not dance in the kitchen.", "target": "dance", "target_index": 3, "label": "verb", "split": "validation", "template_family": "verb_negation"}
+{"id": "brush-noun-07", "sentence": "Alex's brush has soft bristles.", "target": "brush", "target_index": 1, "label": "noun", "split": "validation", "template_family": "possessive_noun_subject"}
+{"id": "brush-noun-08", "sentence": "We talked about the brush.", "target": "brush", "target_index": 4, "label": "noun", "split": "validation", "template_family": "noun_prepositional_object"}
+{"id": "brush-verb-07", "sentence": "I want to brush my hair.", "target": "brush", "target_index": 3, "label": "verb", "split": "validation", "template_family": "verb_infinitive"}
+{"id": "brush-verb-08", "sentence": "We do not brush the cat.", "target": "brush", "target_index": 3, "label": "verb", "split": "validation", "template_family": "verb_negation"}
+{"id": "wave-noun-07", "sentence": "Alex's wave looked friendly.", "target": "wave", "target_index": 1, "label": "noun", "split": "validation", "template_family": "possessive_noun_subject"}
+{"id": "wave-noun-08", "sentence": "We talked about the wave.", "target": "wave", "target_index": 4, "label": "noun", "split": "validation", "template_family": "noun_prepositional_object"}
+{"id": "wave-verb-07", "sentence": "I want to wave at my friend.", "target": "wave", "target_index": 3, "label": "verb", "split": "validation", "template_family": "verb_infinitive"}
+{"id": "wave-verb-08", "sentence": "We do not wave at strangers.", "target": "wave", "target_index": 3, "label": "verb", "split": "validation", "template_family": "verb_negation"}
+{"id": "smile-noun-07", "sentence": "Alex's smile made me happy.", "target": "smile", "target_index": 1, "label": "noun", "split": "validation", "template_family": "possessive_noun_subject"}
+{"id": "smile-noun-08", "sentence": "We talked about the smile.", "target": "smile", "target_index": 4, "label": "noun", "split": "validation", "template_family": "noun_prepositional_object"}
+{"id": "smile-verb-07", "sentence": "I want to smile at my neighbor.", "target": "smile", "target_index": 3, "label": "verb", "split": "validation", "template_family": "verb_infinitive"}
+{"id": "smile-verb-08", "sentence": "We do not smile during sad films.", "target": "smile", "target_index": 3, "label": "verb", "split": "validation", "template_family": "verb_negation"}
+{"id": "answer-noun-07", "sentence": "Alex's answer seems correct.", "target": "answer", "target_index": 1, "label": "noun", "split": "validation", "template_family": "possessive_noun_subject"}
+{"id": "answer-noun-08", "sentence": "We talked about the answer.", "target": "answer", "target_index": 4, "label": "noun", "split": "validation", "template_family": "noun_prepositional_object"}
+{"id": "answer-verb-07", "sentence": "I want to answer your question.", "target": "answer", "target_index": 3, "label": "verb", "split": "validation", "template_family": "verb_infinitive"}
+{"id": "answer-verb-08", "sentence": "We do not answer unknown callers.", "target": "answer", "target_index": 3, "label": "verb", "split": "validation", "template_family": "verb_negation"}
+{"id": "dream-noun-07", "sentence": "Alex's dream felt very real.", "target": "dream", "target_index": 1, "label": "noun", "split": "validation", "template_family": "possessive_noun_subject"}
+{"id": "dream-noun-08", "sentence": "We talked about the dream.", "target": "dream", "target_index": 4, "label": "noun", "split": "validation", "template_family": "noun_prepositional_object"}
+{"id": "dream-verb-07", "sentence": "I want to dream of visiting Mars.", "target": "dream", "target_index": 3, "label": "verb", "split": "validation", "template_family": "verb_infinitive"}
+{"id": "dream-verb-08", "sentence": "We do not dream about work.", "target": "dream", "target_index": 3, "label": "verb", "split": "validation", "template_family": "verb_negation"}
+{"id": "light-noun-07", "sentence": "Alex's light fills the room.", "target": "light", "target_index": 1, "label": "noun", "split": "validation", "template_family": "possessive_noun_subject"}
+{"id": "light-noun-08", "sentence": "We talked about the light.", "target": "light", "target_index": 4, "label": "noun", "split": "validation", "template_family": "noun_prepositional_object"}
+{"id": "light-verb-07", "sentence": "I want to light the fireplace.", "target": "light", "target_index": 3, "label": "verb", "split": "validation", "template_family": "verb_infinitive"}
+{"id": "light-verb-08", "sentence": "We do not light fires indoors.", "target": "light", "target_index": 3, "label": "verb", "split": "validation", "template_family": "verb_negation"}

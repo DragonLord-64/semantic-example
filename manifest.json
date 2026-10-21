@@ -1,0 +1,60 @@
+{
+  "examples": 320,
+  "targets": [
+    "watch",
+    "play",
+    "call",
+    "walk",
+    "run",
+    "drink",
+    "kick",
+    "park",
+    "plant",
+    "dance",
+    "brush",
+    "wave",
+    "smile",
+    "answer",
+    "dream",
+    "light"
+  ],
+  "counts_by_split": {
+    "train": 192,
+    "validation": 64,
+    "test": 64
+  },
+  "counts_by_label": {
+    "noun": 160,
+    "verb": 160
+  },
+  "template_families_by_split": {
+    "train": [
+      "determiner_noun_subject",
+      "noun_direct_object",
+      "pronoun_verb_declarative",
+      "verb_imperative",
+      "verb_modal"
+    ],
+    "validation": [
+      "noun_prepositional_object",
+      "possessive_noun_subject",
+      "verb_infinitive",
+      "verb_negation"
+    ],
+    "test": [
+      "noun_exclamation",
+      "noun_subject_question",
+      "verb_question",
+      "verb_subordinate_clause"
+    ]
+  },
+  "token_pattern": "[A-Za-z]+(?:'[A-Za-z]+)?",
+  "target_index_base": 0,
+  "source": "Hand-authored synthetic examples expanded by deterministic templates",
+  "checks": [
+    "unique IDs and sentences",
+    "balanced labels per target and split",
+    "valid target indices",
+    "template families disjoint across splits"
+  ]
+}
