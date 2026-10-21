@@ -51,6 +51,8 @@ print(result["prediction"], result["verb_probability"])
 
 Run `python example_inference.py` for another example. Importing the module does not train or prompt. Use `predict(sentence, target_index)` for an explicit occurrence.
 
+For the student exercise, open `student_exercise.py`. Finish two TODOs: load the saved model, then loop over sentences containing “watch” and print its predicted role. Compare with your own answers, including a deliberately tricky short sentence.
+
 ## Tweak and verify
 
 In `train.py`, change the `train()` defaults for learning rate, batch size, patience, and context dropout. In `run_training.py`, change `MAX_EPOCHS` and `DISPLAY_DELAY_SECONDS`. Embedding and hidden dimensions are defined in `model.py`. Retrain after changes; checkpoint loading restores saved dimensions.
