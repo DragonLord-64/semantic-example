@@ -5,7 +5,7 @@ import time
 
 HERE = Path(__file__).resolve().parent
 # These are presentation settings, not model hyperparameters.
-DISPLAY_DELAY_SECONDS = 0.10
+DISPLAY_DELAY_SECONDS = 0.5
 MAX_REFRESHES = 100
 MAX_EPOCHS = 300
 MATRIX_KEY = 'confusion_rows_actual_columns_predicted_noun_verb'
@@ -19,7 +19,6 @@ class Dashboard:
         self.interactive = self.stream.isatty()
         self.delay = delay if self.interactive else 0.0
         self.lines_drawn = 0
-        self.presentation_seconds = 0.0
         self.latest = None
         self.last_displayed_epoch = None
         self.refresh_every = max(1, (MAX_EPOCHS + MAX_REFRESHES - 1) // MAX_REFRESHES)
@@ -32,7 +31,7 @@ class Dashboard:
             self.stream.write(frame)
             self.lines_drawn = len(lines)
         else:
-            self.stream.write('\n'.join(lines) + '\n\n')
+            self.stream.write('\n'.join(lines) + '\n')
         self.stream.flush()
 
     @staticmethod
@@ -41,26 +40,11 @@ class Dashboard:
                 f'  noun                  {matrix[0][0]:7d}    {matrix[0][1]:7d}',
                 f'  verb                  {matrix[1][0]:7d}    {matrix[1][1]:7d}']
 
-    def epoch_frame(self, event, status='TRAINING'):
-        best = str(event['best_epoch']) if event['best_epoch'] else 'pending'
-        lines = [
-            'NOUN OR VERB | TRAIN FROM SCRATCH',
-            '=' * 66,
-            f"Status: {status:<12} Epoch: {event['epoch']:3d}/{MAX_EPOCHS}   Best epoch: {best}",
-            '',
-            '  Split               BCE loss       Accuracy',
-            f"  Training            {event['train_loss']:8.4f}        {event['train_accuracy']:7.1%}",
-            f"  Validation          {event['validation_loss']:8.4f}        {event['validation_accuracy']:7.1%}",
-            '',
-            f"Learning rate: {event['learning_rate']:.4f} | Choose lowest validation loss",
-            f"Compute: {event['compute_seconds']:.2f}s | Display pauses: {self.presentation_seconds:.2f}s",
-            '',
-            'Test data is reserved until training and model selection finish.',
-            f'Display refresh: every {self.refresh_every if self.interactive else 10} epochs; {self.delay:.2f}s pause per frame.',
-            'Saved best weights: results/best_model.npz',
-            'Ctrl-C stops training; the last completed best checkpoint remains.',
-        ]
-        return lines
+    def epoch_frame(self, event):
+        best = str(event['best_epoch']) if event['best_epoch'] else '-'
+        return [f"{event['epoch']:5d}  {event['train_loss']:10.4f} "
+                f"{event['train_accuracy']:8.1%}  {event['validation_loss']:10.4f} "
+                f"{event['validation_accuracy']:8.1%}  {best:>4}"]
 
     def __call__(self, event):
         if event['type'] == 'epoch':
@@ -69,33 +53,29 @@ class Dashboard:
             interval = self.refresh_every if self.interactive else 10
             if epoch and epoch % interval:
                 return
+            if self.last_displayed_epoch is None:
+                self.draw(['Training',
+                           'Epoch  Train loss      Acc    Val loss      Acc  Best'])
+                self.lines_drawn = 0
             self.draw(self.epoch_frame(event))
             self.last_displayed_epoch = epoch
             if self.delay:
-                start = time.perf_counter()
                 time.sleep(self.delay)
-                self.presentation_seconds += time.perf_counter() - start
         elif event['type'] == 'complete':
             self.complete(event['report'])
 
     def complete(self, report):
-        if self.latest is not None:
-            self.draw(self.epoch_frame(self.latest, 'FINISHED'))
+        if self.latest is not None and self.latest['epoch'] != self.last_displayed_epoch:
+            self.draw(self.epoch_frame(self.latest))
         # Append a final report; never mix held-out test with live validation.
         self.lines_drawn = 0
         test = report['test']
         self.draw([
             '',
-            'FINAL TEST | selected best checkpoint, evaluated after training',
-            '=' * 66,
-            f"Best epoch: {report['best_epoch']} | Epochs run: {report['epochs_run']}",
-            f"Test BCE loss: {test['loss']:.4f} | Test accuracy: {test['accuracy']:.1%}",
-            *self.matrix_lines(test[MATRIX_KEY], 'TEST confusion matrix (best checkpoint)'),
-            'Diagonal = correct. Off diagonal = mistakes.',
-            'If verb is positive: noun->verb is FP; verb->noun is FN.',
-            f"Training compute: {report['training_seconds']:.2f}s",
-            f'Presentation pauses: {self.presentation_seconds:.2f}s (separate from compute)',
-            f"Checkpoint and JSON reports: {HERE / 'results'}",
+            f"Finished: {report['epochs_run']} epochs | Best: {report['best_epoch']}",
+            f"Test loss: {test['loss']:.4f} | Accuracy: {test['accuracy']:.1%}",
+            *self.matrix_lines(test[MATRIX_KEY], 'Test confusion matrix'),
+            'Saved: results/best_model.npz',
         ])
 
 
@@ -104,7 +84,7 @@ def main():
         from train import train
     except ModuleNotFoundError as exc:
         if exc.name == 'numpy':
-            raise SystemExit('NumPy is required. See CLI.md for the working Python command and setup.') from None
+            raise SystemExit('NumPy is required. See docs/CLI.md for setup.') from None
         raise
     dashboard = Dashboard()
     try:

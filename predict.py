@@ -3,7 +3,7 @@ from pathlib import Path
 import sys
 
 try:
-    from model import ContextModel, PAD, UNK, encode, tokenize
+    from model import ContextModel, PAD, encode, tokenize
 except ModuleNotFoundError as exc:
     if exc.name != 'numpy':
         raise
@@ -56,18 +56,8 @@ def classify(model, sentence, index):
 
 
 def print_prediction(result):
-    display = [f'[{word}]' if i == 2 else word
-               for i, word in enumerate(result['context'])]
-    print('\nContext (two words on each side): ' + ' | '.join(display))
-    print(f"  noun  {result['noun_probability']:7.2%}")
-    print(f"  verb  {result['verb_probability']:7.2%}")
-    print(f"Prediction for token {result['target_index'] + 1} "
-          f"({result['target']}): {result['prediction']}")
-    if result['unknown_target']:
-        print(f"Warning: target was unseen in training and mapped to {UNK}.")
-    if result['unknown_context']:
-        print(f"Unseen context mapped to {UNK}: " + ', '.join(result['unknown_context']))
-    print('These are model probabilities, not a guarantee of correctness.\n')
+    label = result['prediction']
+    print(f"{result['target']}: {label} ({result[label + '_probability']:.1%})")
 
 
 def main(checkpoint=CHECKPOINT):
@@ -80,10 +70,7 @@ def main(checkpoint=CHECKPOINT):
     except (OSError, ValueError, KeyError) as exc:
         print(f'Could not load checkpoint: {exc}', file=sys.stderr)
         return 1
-    print(f'Loaded saved weights: {checkpoint}')
-    print('Classify ONE selected word as noun or verb; other roles are unsupported.')
-    print('Try: The watch is broken.  Or: They watch the birds.')
-    print('Type :quit or submit an empty sentence to finish.')
+    print('Noun or verb. Empty sentence or :quit to exit; :back to change sentence.')
     try:
         while True:
             sentence = input('\nSentence> ').strip()
@@ -95,7 +82,7 @@ def main(checkpoint=CHECKPOINT):
                 continue
             print('Tokens: ' + '  '.join(f'{i + 1}:{word}' for i, word in enumerate(words)))
             while True:
-                choice = input('Target word or token number (:back for another sentence)> ')
+                choice = input('Word or number> ')
                 if choice.strip().lower() == ':quit':
                     return 0
                 if choice.strip().lower() == ':back':
@@ -108,7 +95,7 @@ def main(checkpoint=CHECKPOINT):
                 print_prediction(classify(model, sentence, index))
                 break
     except (EOFError, KeyboardInterrupt):
-        print('\nFinished.')
+        print()
     return 0
 
 

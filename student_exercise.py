@@ -20,19 +20,14 @@ SENTENCES = [
 def main():
     # 1. Before running the model, predict noun/verb yourself for each sentence.
 
-    # TODO 1: Replace None by loading the saved weights ONCE.
-    # Hint: Predictor.from_checkpoint() returns an object you can reuse.
+    # TODO 1: Load the saved model.
     predictor = None
 
     if predictor is None:
         print("Finish TODO 1 and TODO 2 in student_exercise.py, then run again.")
         return
 
-    # TODO 2: Loop over SENTENCES. For each sentence:
-    # - Call predictor.predict_word(sentence, TARGET).
-    # - The returned dictionary has 'prediction' and 'verb_probability' keys.
-    # - Print the sentence, predicted label, and probability of verb.
-    # Hint: f"{probability:.1%}" formats a number as a percentage.
+    # TODO 2: Print each sentence, TARGET's predicted label, and verb probability.
     pass
 
     # 3. Compare with your own labels. Which predictions surprised you?
