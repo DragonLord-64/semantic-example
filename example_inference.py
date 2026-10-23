@@ -10,6 +10,10 @@ def main():
           f"(P(verb)={result['verb_probability']:.4f})")
     # Select a specific occurrence using a zero-based tokenizer index.
     print('Selected occurrence:', predictor.predict(sentence, target_index=1))
+    # Other parts of speech receive the "other" label.
+    result = predictor.predict_word(sentence, 'the')
+    print(f"{result['token']}: {result['prediction']} "
+          f"(P(other)={result['other_probability']:.4f})")
 
 
 if __name__ == '__main__':

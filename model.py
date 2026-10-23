@@ -5,6 +5,7 @@ import numpy as np
 
 TOKEN_PATTERN = r"[A-Za-z]+(?:'[A-Za-z]+)?"
 PAD, UNK = "<PAD>", "<UNK>"
+LABELS = ("noun", "verb", "other")
 
 
 def tokenize(sentence):
@@ -26,45 +27,56 @@ def encode(rows, vocab):
         windows.append([vocab.get(words[i], vocab[UNK]) if 0 <= i < len(words)
                         else vocab[PAD] for i in range(pos - 2, pos + 3)])
     return np.array(windows, dtype=np.int64), np.array(
-        [row['label'] == 'verb' for row in rows], dtype=np.float64)
+        [LABELS.index(row['label']) for row in rows], dtype=np.int64)
 
 
-def sigmoid(logits):
-    # exp(-logaddexp(0, -z)) is stable even for extreme logits.
-    return np.exp(-np.logaddexp(0, -logits))
+def softmax(logits):
+    # Subtracting each row's maximum prevents exp overflow.
+    shifted = logits - logits.max(axis=-1, keepdims=True)
+    weights = np.exp(shifted)
+    return weights / weights.sum(axis=-1, keepdims=True)
+
+
+def cross_entropy(logits, labels):
+    shifted = logits - logits.max(axis=1, keepdims=True)
+    return float(np.mean(np.log(np.exp(shifted).sum(axis=1))
+                         - shifted[np.arange(len(labels)), labels]))
 
 
 class ContextModel:
     def __init__(self, vocab, seed=7, embedding_dim=8, hidden_dim=16):
         self.vocab = vocab
+        self.targets = frozenset()
         rng = np.random.default_rng(seed)
         self.params = {
             'embedding': rng.normal(0, 0.1, (len(vocab), embedding_dim)),
             'W1': rng.normal(0, 1 / np.sqrt(5 * embedding_dim),
                              (5 * embedding_dim, hidden_dim)),
             'b1': np.zeros(hidden_dim),
-            'W2': rng.normal(0, 1 / np.sqrt(hidden_dim), hidden_dim),
-            'b2': np.zeros(1),
+            'W2': rng.normal(0, 1 / np.sqrt(hidden_dim), (hidden_dim, len(LABELS))),
+            'b2': np.zeros(len(LABELS)),
         }
 
     def forward(self, windows):
         flat = self.params['embedding'][windows].reshape(len(windows), -1)
         hidden = np.tanh(flat @ self.params['W1'] + self.params['b1'])
-        logits = hidden @ self.params['W2'] + self.params['b2'][0]
+        logits = hidden @ self.params['W2'] + self.params['b2']
         return logits, (flat, hidden)
 
     def loss_and_gradients(self, windows, labels):
         logits, (flat, hidden) = self.forward(windows)
-        loss = np.mean(np.logaddexp(0, logits) - labels * logits)
-        dlogits = (sigmoid(logits) - labels) / len(labels)
-        dhidden = dlogits[:, None] * self.params['W2'] * (1 - hidden ** 2)
+        loss = cross_entropy(logits, labels)
+        dlogits = softmax(logits)
+        dlogits[np.arange(len(labels)), labels] -= 1
+        dlogits /= len(labels)
+        dhidden = (dlogits @ self.params['W2'].T) * (1 - hidden ** 2)
         dflat = dhidden @ self.params['W1'].T
         gradients = {
             'embedding': np.zeros_like(self.params['embedding']),
             'W1': flat.T @ dhidden,
             'b1': dhidden.sum(axis=0),
             'W2': hidden.T @ dlogits,
-            'b2': np.array([dlogits.sum()]),
+            'b2': dlogits.sum(axis=0),
         }
         # Accumulate repeated token IDs; indexed += would drop repeated entries.
         np.add.at(gradients['embedding'], windows,
@@ -72,18 +84,23 @@ class ContextModel:
         return float(loss), gradients
 
     def predict(self, windows):
-        return sigmoid(self.forward(windows)[0])
+        return softmax(self.forward(windows)[0])
 
     def save(self, path):
-        np.savez(path, vocab=np.array(json.dumps(self.vocab)), **self.params)
+        np.savez(path, vocab=np.array(json.dumps(self.vocab)),
+                 labels=np.array(LABELS), targets=np.array(json.dumps(sorted(self.targets))),
+                 **self.params)
 
     @classmethod
     def load(cls, path):
         with np.load(path, allow_pickle=False) as data:
+            if 'labels' not in data or tuple(data['labels']) != LABELS:
+                raise ValueError('Checkpoint must use noun, verb, other labels; retrain with train.py.')
             model = cls(json.loads(str(data['vocab'])),
                         embedding_dim=data['embedding'].shape[1],
                         hidden_dim=data['b1'].shape[0])
             model.params = {key: data[key].copy() for key in model.params}
+            model.targets = frozenset(json.loads(str(data['targets'])))
         return model
 
 

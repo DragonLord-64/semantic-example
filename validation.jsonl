@@ -62,3 +62,69 @@
 {"id": "light-noun-08", "sentence": "We talked about the light.", "target": "light", "target_index": 4, "label": "noun", "split": "validation", "template_family": "noun_prepositional_object"}
 {"id": "light-verb-07", "sentence": "I want to light the fireplace.", "target": "light", "target_index": 3, "label": "verb", "split": "validation", "template_family": "verb_infinitive"}
 {"id": "light-verb-08", "sentence": "We do not light fires indoors.", "target": "light", "target_index": 3, "label": "verb", "split": "validation", "template_family": "verb_negation"}
+{"id": "birds-noun-07", "sentence": "Can you see the birds?", "target": "birds", "target_index": 4, "label": "noun", "split": "validation", "template_family": "broad_noun_07"}
+{"id": "birds-noun-08", "sentence": "We talked about the birds.", "target": "birds", "target_index": 4, "label": "noun", "split": "validation", "template_family": "broad_noun_08"}
+{"id": "boats-noun-07", "sentence": "Can you see the boats?", "target": "boats", "target_index": 4, "label": "noun", "split": "validation", "template_family": "broad_noun_07"}
+{"id": "boats-noun-08", "sentence": "We talked about the boats.", "target": "boats", "target_index": 4, "label": "noun", "split": "validation", "template_family": "broad_noun_08"}
+{"id": "dogs-noun-07", "sentence": "Can you see the dogs?", "target": "dogs", "target_index": 4, "label": "noun", "split": "validation", "template_family": "broad_noun_07"}
+{"id": "dogs-noun-08", "sentence": "We talked about the dogs.", "target": "dogs", "target_index": 4, "label": "noun", "split": "validation", "template_family": "broad_noun_08"}
+{"id": "cats-noun-07", "sentence": "Can you see the cats?", "target": "cats", "target_index": 4, "label": "noun", "split": "validation", "template_family": "broad_noun_07"}
+{"id": "cats-noun-08", "sentence": "We talked about the cats.", "target": "cats", "target_index": 4, "label": "noun", "split": "validation", "template_family": "broad_noun_08"}
+{"id": "trees-noun-07", "sentence": "Can you see the trees?", "target": "trees", "target_index": 4, "label": "noun", "split": "validation", "template_family": "broad_noun_07"}
+{"id": "trees-noun-08", "sentence": "We talked about the trees.", "target": "trees", "target_index": 4, "label": "noun", "split": "validation", "template_family": "broad_noun_08"}
+{"id": "books-noun-07", "sentence": "Can you see the books?", "target": "books", "target_index": 4, "label": "noun", "split": "validation", "template_family": "broad_noun_07"}
+{"id": "books-noun-08", "sentence": "We talked about the books.", "target": "books", "target_index": 4, "label": "noun", "split": "validation", "template_family": "broad_noun_08"}
+{"id": "teachers-noun-07", "sentence": "Can you see the teachers?", "target": "teachers", "target_index": 4, "label": "noun", "split": "validation", "template_family": "broad_noun_07"}
+{"id": "teachers-noun-08", "sentence": "We talked about the teachers.", "target": "teachers", "target_index": 4, "label": "noun", "split": "validation", "template_family": "broad_noun_08"}
+{"id": "students-noun-07", "sentence": "Can you see the students?", "target": "students", "target_index": 4, "label": "noun", "split": "validation", "template_family": "broad_noun_07"}
+{"id": "students-noun-08", "sentence": "We talked about the students.", "target": "students", "target_index": 4, "label": "noun", "split": "validation", "template_family": "broad_noun_08"}
+{"id": "flowers-noun-07", "sentence": "Can you see the flowers?", "target": "flowers", "target_index": 4, "label": "noun", "split": "validation", "template_family": "broad_noun_07"}
+{"id": "flowers-noun-08", "sentence": "We talked about the flowers.", "target": "flowers", "target_index": 4, "label": "noun", "split": "validation", "template_family": "broad_noun_08"}
+{"id": "stars-noun-07", "sentence": "Can you see the stars?", "target": "stars", "target_index": 4, "label": "noun", "split": "validation", "template_family": "broad_noun_07"}
+{"id": "stars-noun-08", "sentence": "We talked about the stars.", "target": "stars", "target_index": 4, "label": "noun", "split": "validation", "template_family": "broad_noun_08"}
+{"id": "friends-noun-07", "sentence": "Can you see the friends?", "target": "friends", "target_index": 4, "label": "noun", "split": "validation", "template_family": "broad_noun_07"}
+{"id": "friends-noun-08", "sentence": "We talked about the friends.", "target": "friends", "target_index": 4, "label": "noun", "split": "validation", "template_family": "broad_noun_08"}
+{"id": "cars-noun-07", "sentence": "Can you see the cars?", "target": "cars", "target_index": 4, "label": "noun", "split": "validation", "template_family": "broad_noun_07"}
+{"id": "cars-noun-08", "sentence": "We talked about the cars.", "target": "cars", "target_index": 4, "label": "noun", "split": "validation", "template_family": "broad_noun_08"}
+{"id": "houses-noun-07", "sentence": "Can you see the houses?", "target": "houses", "target_index": 4, "label": "noun", "split": "validation", "template_family": "broad_noun_07"}
+{"id": "houses-noun-08", "sentence": "We talked about the houses.", "target": "houses", "target_index": 4, "label": "noun", "split": "validation", "template_family": "broad_noun_08"}
+{"id": "horses-noun-07", "sentence": "Can you see the horses?", "target": "horses", "target_index": 4, "label": "noun", "split": "validation", "template_family": "broad_noun_07"}
+{"id": "horses-noun-08", "sentence": "We talked about the horses.", "target": "horses", "target_index": 4, "label": "noun", "split": "validation", "template_family": "broad_noun_08"}
+{"id": "lamps-noun-07", "sentence": "Can you see the lamps?", "target": "lamps", "target_index": 4, "label": "noun", "split": "validation", "template_family": "broad_noun_07"}
+{"id": "lamps-noun-08", "sentence": "We talked about the lamps.", "target": "lamps", "target_index": 4, "label": "noun", "split": "validation", "template_family": "broad_noun_08"}
+{"id": "chairs-noun-07", "sentence": "Can you see the chairs?", "target": "chairs", "target_index": 4, "label": "noun", "split": "validation", "template_family": "broad_noun_07"}
+{"id": "chairs-noun-08", "sentence": "We talked about the chairs.", "target": "chairs", "target_index": 4, "label": "noun", "split": "validation", "template_family": "broad_noun_08"}
+{"id": "they-other-07", "sentence": "They watch the teachers today.", "target": "they", "target_index": 0, "label": "other", "split": "validation", "template_family": "other_they"}
+{"id": "they-other-08", "sentence": "They watch the boats today.", "target": "they", "target_index": 0, "label": "other", "split": "validation", "template_family": "other_they"}
+{"id": "we-other-07", "sentence": "We watch the teachers today.", "target": "we", "target_index": 0, "label": "other", "split": "validation", "template_family": "other_we"}
+{"id": "we-other-08", "sentence": "We watch the boats today.", "target": "we", "target_index": 0, "label": "other", "split": "validation", "template_family": "other_we"}
+{"id": "you-other-07", "sentence": "You watch the teachers today.", "target": "you", "target_index": 0, "label": "other", "split": "validation", "template_family": "other_you"}
+{"id": "you-other-08", "sentence": "You watch the boats today.", "target": "you", "target_index": 0, "label": "other", "split": "validation", "template_family": "other_you"}
+{"id": "i-other-07", "sentence": "I watch the teachers today.", "target": "i", "target_index": 0, "label": "other", "split": "validation", "template_family": "other_i"}
+{"id": "i-other-08", "sentence": "I watch the boats today.", "target": "i", "target_index": 0, "label": "other", "split": "validation", "template_family": "other_i"}
+{"id": "the-other-07", "sentence": "They watch the teachers today.", "target": "the", "target_index": 2, "label": "other", "split": "validation", "template_family": "other_the"}
+{"id": "the-other-08", "sentence": "They watch the boats today.", "target": "the", "target_index": 2, "label": "other", "split": "validation", "template_family": "other_the"}
+{"id": "a-other-07", "sentence": "They see a teacher today.", "target": "a", "target_index": 2, "label": "other", "split": "validation", "template_family": "other_a"}
+{"id": "a-other-08", "sentence": "They see a child today.", "target": "a", "target_index": 2, "label": "other", "split": "validation", "template_family": "other_a"}
+{"id": "this-other-07", "sentence": "They see this teacher today.", "target": "this", "target_index": 2, "label": "other", "split": "validation", "template_family": "other_this"}
+{"id": "this-other-08", "sentence": "They see this child today.", "target": "this", "target_index": 2, "label": "other", "split": "validation", "template_family": "other_this"}
+{"id": "my-other-07", "sentence": "They see my teacher today.", "target": "my", "target_index": 2, "label": "other", "split": "validation", "template_family": "other_my"}
+{"id": "my-other-08", "sentence": "They see my child today.", "target": "my", "target_index": 2, "label": "other", "split": "validation", "template_family": "other_my"}
+{"id": "your-other-07", "sentence": "They see your teacher today.", "target": "your", "target_index": 2, "label": "other", "split": "validation", "template_family": "other_your"}
+{"id": "your-other-08", "sentence": "They see your child today.", "target": "your", "target_index": 2, "label": "other", "split": "validation", "template_family": "other_your"}
+{"id": "to-other-07", "sentence": "They walk to the beach today.", "target": "to", "target_index": 2, "label": "other", "split": "validation", "template_family": "other_to"}
+{"id": "to-other-08", "sentence": "They walk to the river today.", "target": "to", "target_index": 2, "label": "other", "split": "validation", "template_family": "other_to"}
+{"id": "with-other-07", "sentence": "They play with the teacher today.", "target": "with", "target_index": 2, "label": "other", "split": "validation", "template_family": "other_with"}
+{"id": "with-other-08", "sentence": "They play with the child today.", "target": "with", "target_index": 2, "label": "other", "split": "validation", "template_family": "other_with"}
+{"id": "and-other-07", "sentence": "They watch the teachers and smile today.", "target": "and", "target_index": 4, "label": "other", "split": "validation", "template_family": "other_and"}
+{"id": "and-other-08", "sentence": "They watch the boats and smile today.", "target": "and", "target_index": 4, "label": "other", "split": "validation", "template_family": "other_and"}
+{"id": "quickly-other-07", "sentence": "They quickly notice the teachers today.", "target": "quickly", "target_index": 1, "label": "other", "split": "validation", "template_family": "other_quickly"}
+{"id": "quickly-other-08", "sentence": "They quickly notice the boats today.", "target": "quickly", "target_index": 1, "label": "other", "split": "validation", "template_family": "other_quickly"}
+{"id": "very-other-07", "sentence": "The teachers are very quiet today.", "target": "very", "target_index": 3, "label": "other", "split": "validation", "template_family": "other_very"}
+{"id": "very-other-08", "sentence": "The boats are very quiet today.", "target": "very", "target_index": 3, "label": "other", "split": "validation", "template_family": "other_very"}
+{"id": "happy-other-07", "sentence": "The happy teachers play outside today.", "target": "happy", "target_index": 1, "label": "other", "split": "validation", "template_family": "other_happy"}
+{"id": "happy-other-08", "sentence": "The happy boats play outside today.", "target": "happy", "target_index": 1, "label": "other", "split": "validation", "template_family": "other_happy"}
+{"id": "not-other-07", "sentence": "They do not watch the teachers today.", "target": "not", "target_index": 2, "label": "other", "split": "validation", "template_family": "other_not"}
+{"id": "not-other-08", "sentence": "They do not watch the boats today.", "target": "not", "target_index": 2, "label": "other", "split": "validation", "template_family": "other_not"}
+{"id": "please-other-07", "sentence": "Please watch the teachers today.", "target": "please", "target_index": 0, "label": "other", "split": "validation", "template_family": "other_please"}
+{"id": "please-other-08", "sentence": "Please watch the boats today.", "target": "please", "target_index": 0, "label": "other", "split": "validation", "template_family": "other_please"}

@@ -8,7 +8,7 @@ HERE = Path(__file__).resolve().parent
 DISPLAY_DELAY_SECONDS = 0.5
 MAX_REFRESHES = 100
 MAX_EPOCHS = 300
-MATRIX_KEY = 'confusion_rows_actual_columns_predicted_noun_verb'
+MATRIX_KEY = 'confusion_rows_actual_columns_predicted_noun_verb_other'
 
 
 class Dashboard:
@@ -36,9 +36,11 @@ class Dashboard:
 
     @staticmethod
     def matrix_lines(matrix, title):
-        return [title, '  Actual \\ Predicted       noun       verb',
-                f'  noun                  {matrix[0][0]:7d}    {matrix[0][1]:7d}',
-                f'  verb                  {matrix[1][0]:7d}    {matrix[1][1]:7d}']
+        labels = ('noun', 'verb', 'other')
+        return [title, '  Actual \\ Predicted       noun       verb      other',
+                *(f'  {label:<20}' + ''.join(f'{value:10d}' for value in row)
+                  for label, row in zip(labels, matrix))]
+
 
     def epoch_frame(self, event):
         best = str(event['best_epoch']) if event['best_epoch'] else '-'

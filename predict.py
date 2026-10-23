@@ -3,7 +3,8 @@ from pathlib import Path
 import sys
 
 try:
-    from model import ContextModel, PAD, encode, tokenize
+    from model import ContextModel, tokenize
+    from inference import Predictor
 except ModuleNotFoundError as exc:
     if exc.name != 'numpy':
         raise
@@ -35,24 +36,8 @@ def select_target(words, choice):
 
 def classify(model, sentence, index):
     """Use precisely the same tokenizer and context encoder as training."""
-    words = tokenize(sentence)
-    if not 0 <= index < len(words):
-        raise ValueError('Target index is outside the sentence.')
-    row = {'id': 'interactive', 'sentence': sentence, 'target': words[index],
-           'target_index': index, 'label': 'noun'}
-    windows, _ = encode([row], model.vocab)
-    verb_probability = float(model.predict(windows)[0])
-    context = [words[i] if 0 <= i < len(words) else PAD
-               for i in range(index - 2, index + 3)]
-    return {'target': words[index], 'target_index': index,
-            'context': context, 'window_ids': windows[0].tolist(),
-            'unknown_context': sorted({word for offset, word in enumerate(context)
-                                       if offset != 2 and word != PAD
-                                       and word not in model.vocab}),
-            'unknown_target': words[index] not in model.vocab,
-            'noun_probability': 1 - verb_probability,
-            'verb_probability': verb_probability,
-            'prediction': 'verb' if verb_probability >= 0.5 else 'noun'}
+    result = Predictor(model).predict(sentence, index)
+    return dict(result, target=result['token'])
 
 
 def print_prediction(result):
@@ -70,7 +55,7 @@ def main(checkpoint=CHECKPOINT):
     except (OSError, ValueError, KeyError) as exc:
         print(f'Could not load checkpoint: {exc}', file=sys.stderr)
         return 1
-    print('Noun or verb. Empty sentence or :quit to exit; :back to change sentence.')
+    print('Noun, verb, or other. Empty sentence or :quit to exit; :back to change sentence.')
     try:
         while True:
             sentence = input('\nSentence> ').strip()

@@ -62,3 +62,69 @@
 {"id": "light-noun-10", "sentence": "What a bright light!", "target": "light", "target_index": 3, "label": "noun", "split": "test", "template_family": "noun_exclamation"}
 {"id": "light-verb-09", "sentence": "Do you light the torch?", "target": "light", "target_index": 2, "label": "verb", "split": "test", "template_family": "verb_question"}
 {"id": "light-verb-10", "sentence": "When we light the campfire, the wood begins to glow.", "target": "light", "target_index": 2, "label": "verb", "split": "test", "template_family": "verb_subordinate_clause"}
+{"id": "birds-noun-09", "sentence": "Where are the birds?", "target": "birds", "target_index": 3, "label": "noun", "split": "test", "template_family": "broad_noun_09"}
+{"id": "birds-noun-10", "sentence": "Look at those beautiful birds!", "target": "birds", "target_index": 4, "label": "noun", "split": "test", "template_family": "broad_noun_10"}
+{"id": "boats-noun-09", "sentence": "Where are the boats?", "target": "boats", "target_index": 3, "label": "noun", "split": "test", "template_family": "broad_noun_09"}
+{"id": "boats-noun-10", "sentence": "Look at those beautiful boats!", "target": "boats", "target_index": 4, "label": "noun", "split": "test", "template_family": "broad_noun_10"}
+{"id": "dogs-noun-09", "sentence": "Where are the dogs?", "target": "dogs", "target_index": 3, "label": "noun", "split": "test", "template_family": "broad_noun_09"}
+{"id": "dogs-noun-10", "sentence": "Look at those beautiful dogs!", "target": "dogs", "target_index": 4, "label": "noun", "split": "test", "template_family": "broad_noun_10"}
+{"id": "cats-noun-09", "sentence": "Where are the cats?", "target": "cats", "target_index": 3, "label": "noun", "split": "test", "template_family": "broad_noun_09"}
+{"id": "cats-noun-10", "sentence": "Look at those beautiful cats!", "target": "cats", "target_index": 4, "label": "noun", "split": "test", "template_family": "broad_noun_10"}
+{"id": "trees-noun-09", "sentence": "Where are the trees?", "target": "trees", "target_index": 3, "label": "noun", "split": "test", "template_family": "broad_noun_09"}
+{"id": "trees-noun-10", "sentence": "Look at those beautiful trees!", "target": "trees", "target_index": 4, "label": "noun", "split": "test", "template_family": "broad_noun_10"}
+{"id": "books-noun-09", "sentence": "Where are the books?", "target": "books", "target_index": 3, "label": "noun", "split": "test", "template_family": "broad_noun_09"}
+{"id": "books-noun-10", "sentence": "Look at those beautiful books!", "target": "books", "target_index": 4, "label": "noun", "split": "test", "template_family": "broad_noun_10"}
+{"id": "teachers-noun-09", "sentence": "Where are the teachers?", "target": "teachers", "target_index": 3, "label": "noun", "split": "test", "template_family": "broad_noun_09"}
+{"id": "teachers-noun-10", "sentence": "Look at those beautiful teachers!", "target": "teachers", "target_index": 4, "label": "noun", "split": "test", "template_family": "broad_noun_10"}
+{"id": "students-noun-09", "sentence": "Where are the students?", "target": "students", "target_index": 3, "label": "noun", "split": "test", "template_family": "broad_noun_09"}
+{"id": "students-noun-10", "sentence": "Look at those beautiful students!", "target": "students", "target_index": 4, "label": "noun", "split": "test", "template_family": "broad_noun_10"}
+{"id": "flowers-noun-09", "sentence": "Where are the flowers?", "target": "flowers", "target_index": 3, "label": "noun", "split": "test", "template_family": "broad_noun_09"}
+{"id": "flowers-noun-10", "sentence": "Look at those beautiful flowers!", "target": "flowers", "target_index": 4, "label": "noun", "split": "test", "template_family": "broad_noun_10"}
+{"id": "stars-noun-09", "sentence": "Where are the stars?", "target": "stars", "target_index": 3, "label": "noun", "split": "test", "template_family": "broad_noun_09"}
+{"id": "stars-noun-10", "sentence": "Look at those beautiful stars!", "target": "stars", "target_index": 4, "label": "noun", "split": "test", "template_family": "broad_noun_10"}
+{"id": "friends-noun-09", "sentence": "Where are the friends?", "target": "friends", "target_index": 3, "label": "noun", "split": "test", "template_family": "broad_noun_09"}
+{"id": "friends-noun-10", "sentence": "Look at those beautiful friends!", "target": "friends", "target_index": 4, "label": "noun", "split": "test", "template_family": "broad_noun_10"}
+{"id": "cars-noun-09", "sentence": "Where are the cars?", "target": "cars", "target_index": 3, "label": "noun", "split": "test", "template_family": "broad_noun_09"}
+{"id": "cars-noun-10", "sentence": "Look at those beautiful cars!", "target": "cars", "target_index": 4, "label": "noun", "split": "test", "template_family": "broad_noun_10"}
+{"id": "houses-noun-09", "sentence": "Where are the houses?", "target": "houses", "target_index": 3, "label": "noun", "split": "test", "template_family": "broad_noun_09"}
+{"id": "houses-noun-10", "sentence": "Look at those beautiful houses!", "target": "houses", "target_index": 4, "label": "noun", "split": "test", "template_family": "broad_noun_10"}
+{"id": "horses-noun-09", "sentence": "Where are the horses?", "target": "horses", "target_index": 3, "label": "noun", "split": "test", "template_family": "broad_noun_09"}
+{"id": "horses-noun-10", "sentence": "Look at those beautiful horses!", "target": "horses", "target_index": 4, "label": "noun", "split": "test", "template_family": "broad_noun_10"}
+{"id": "lamps-noun-09", "sentence": "Where are the lamps?", "target": "lamps", "target_index": 3, "label": "noun", "split": "test", "template_family": "broad_noun_09"}
+{"id": "lamps-noun-10", "sentence": "Look at those beautiful lamps!", "target": "lamps", "target_index": 4, "label": "noun", "split": "test", "template_family": "broad_noun_10"}
+{"id": "chairs-noun-09", "sentence": "Where are the chairs?", "target": "chairs", "target_index": 3, "label": "noun", "split": "test", "template_family": "broad_noun_09"}
+{"id": "chairs-noun-10", "sentence": "Look at those beautiful chairs!", "target": "chairs", "target_index": 4, "label": "noun", "split": "test", "template_family": "broad_noun_10"}
+{"id": "they-other-09", "sentence": "They watch the cars again.", "target": "they", "target_index": 0, "label": "other", "split": "test", "template_family": "other_they"}
+{"id": "they-other-10", "sentence": "They watch the flowers again.", "target": "they", "target_index": 0, "label": "other", "split": "test", "template_family": "other_they"}
+{"id": "we-other-09", "sentence": "We watch the cars again.", "target": "we", "target_index": 0, "label": "other", "split": "test", "template_family": "other_we"}
+{"id": "we-other-10", "sentence": "We watch the flowers again.", "target": "we", "target_index": 0, "label": "other", "split": "test", "template_family": "other_we"}
+{"id": "you-other-09", "sentence": "You watch the cars again.", "target": "you", "target_index": 0, "label": "other", "split": "test", "template_family": "other_you"}
+{"id": "you-other-10", "sentence": "You watch the flowers again.", "target": "you", "target_index": 0, "label": "other", "split": "test", "template_family": "other_you"}
+{"id": "i-other-09", "sentence": "I watch the cars again.", "target": "i", "target_index": 0, "label": "other", "split": "test", "template_family": "other_i"}
+{"id": "i-other-10", "sentence": "I watch the flowers again.", "target": "i", "target_index": 0, "label": "other", "split": "test", "template_family": "other_i"}
+{"id": "the-other-09", "sentence": "They watch the cars again.", "target": "the", "target_index": 2, "label": "other", "split": "test", "template_family": "other_the"}
+{"id": "the-other-10", "sentence": "They watch the flowers again.", "target": "the", "target_index": 2, "label": "other", "split": "test", "template_family": "other_the"}
+{"id": "a-other-09", "sentence": "They see a puppy again.", "target": "a", "target_index": 2, "label": "other", "split": "test", "template_family": "other_a"}
+{"id": "a-other-10", "sentence": "They see a kitten again.", "target": "a", "target_index": 2, "label": "other", "split": "test", "template_family": "other_a"}
+{"id": "this-other-09", "sentence": "They see this puppy again.", "target": "this", "target_index": 2, "label": "other", "split": "test", "template_family": "other_this"}
+{"id": "this-other-10", "sentence": "They see this kitten again.", "target": "this", "target_index": 2, "label": "other", "split": "test", "template_family": "other_this"}
+{"id": "my-other-09", "sentence": "They see my puppy again.", "target": "my", "target_index": 2, "label": "other", "split": "test", "template_family": "other_my"}
+{"id": "my-other-10", "sentence": "They see my kitten again.", "target": "my", "target_index": 2, "label": "other", "split": "test", "template_family": "other_my"}
+{"id": "your-other-09", "sentence": "They see your puppy again.", "target": "your", "target_index": 2, "label": "other", "split": "test", "template_family": "other_your"}
+{"id": "your-other-10", "sentence": "They see your kitten again.", "target": "your", "target_index": 2, "label": "other", "split": "test", "template_family": "other_your"}
+{"id": "to-other-09", "sentence": "They walk to the station again.", "target": "to", "target_index": 2, "label": "other", "split": "test", "template_family": "other_to"}
+{"id": "to-other-10", "sentence": "They walk to the bridge again.", "target": "to", "target_index": 2, "label": "other", "split": "test", "template_family": "other_to"}
+{"id": "with-other-09", "sentence": "They play with the puppy again.", "target": "with", "target_index": 2, "label": "other", "split": "test", "template_family": "other_with"}
+{"id": "with-other-10", "sentence": "They play with the kitten again.", "target": "with", "target_index": 2, "label": "other", "split": "test", "template_family": "other_with"}
+{"id": "and-other-09", "sentence": "They watch the cars and smile again.", "target": "and", "target_index": 4, "label": "other", "split": "test", "template_family": "other_and"}
+{"id": "and-other-10", "sentence": "They watch the flowers and smile again.", "target": "and", "target_index": 4, "label": "other", "split": "test", "template_family": "other_and"}
+{"id": "quickly-other-09", "sentence": "They quickly notice the cars again.", "target": "quickly", "target_index": 1, "label": "other", "split": "test", "template_family": "other_quickly"}
+{"id": "quickly-other-10", "sentence": "They quickly notice the flowers again.", "target": "quickly", "target_index": 1, "label": "other", "split": "test", "template_family": "other_quickly"}
+{"id": "very-other-09", "sentence": "The cars are very quiet again.", "target": "very", "target_index": 3, "label": "other", "split": "test", "template_family": "other_very"}
+{"id": "very-other-10", "sentence": "The flowers are very quiet again.", "target": "very", "target_index": 3, "label": "other", "split": "test", "template_family": "other_very"}
+{"id": "happy-other-09", "sentence": "The happy cars play outside again.", "target": "happy", "target_index": 1, "label": "other", "split": "test", "template_family": "other_happy"}
+{"id": "happy-other-10", "sentence": "The happy flowers play outside again.", "target": "happy", "target_index": 1, "label": "other", "split": "test", "template_family": "other_happy"}
+{"id": "not-other-09", "sentence": "They do not watch the cars again.", "target": "not", "target_index": 2, "label": "other", "split": "test", "template_family": "other_not"}
+{"id": "not-other-10", "sentence": "They do not watch the flowers again.", "target": "not", "target_index": 2, "label": "other", "split": "test", "template_family": "other_not"}
+{"id": "please-other-09", "sentence": "Please watch the cars again.", "target": "please", "target_index": 0, "label": "other", "split": "test", "template_family": "other_please"}
+{"id": "please-other-10", "sentence": "Please watch the flowers again.", "target": "please", "target_index": 0, "label": "other", "split": "test", "template_family": "other_please"}

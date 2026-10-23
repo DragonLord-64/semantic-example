@@ -2,15 +2,15 @@
 from pathlib import Path
 from tempfile import TemporaryDirectory
 import numpy as np
-from model import ContextModel, PAD, UNK, sigmoid
+from model import ContextModel, PAD, UNK, softmax
 
 
 def main():
     vocab = {PAD: 0, UNK: 1, 'the': 2, 'watch': 3, 'they': 4}
     model = ContextModel(vocab)
     # Repeated 'the' and repeated PAD deliberately exercise scatter-add gradients.
-    windows = np.array([[0, 2, 3, 2, 0], [0, 4, 3, 0, 0]])
-    labels = np.array([0., 1.])
+    windows = np.array([[0, 2, 3, 2, 0], [0, 4, 3, 0, 0], [0, 0, 2, 3, 0]])
+    labels = np.array([0, 1, 2], dtype=np.int64)
     loss, gradients = model.loss_and_gradients(windows, labels)
     eps, worst = 1e-5, 0.
     for key, param in model.params.items():
@@ -36,7 +36,7 @@ def main():
         model.save(checkpoint)
         restored = ContextModel.load(checkpoint)
         np.testing.assert_array_equal(before, restored.predict(windows))
-    np.testing.assert_allclose(sigmoid(np.array([-1000., 1000.])), [0., 1.])
+    np.testing.assert_allclose(softmax(np.array([[-1000., 0., 1000.]])), [[0., 0., 1.]])
     # Extreme logits must also produce finite losses and gradients.
     for extreme in [-1000., 1000.]:
         model.params['b2'][0] = extreme

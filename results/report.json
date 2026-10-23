@@ -1,10 +1,10 @@
 {
   "seed": 7,
-  "vocabulary_size": 259,
-  "parameter_count": 2745,
-  "training_seconds": 0.19003913982305676,
-  "epochs_run": 34,
-  "best_epoch": 4,
+  "vocabulary_size": 287,
+  "parameter_count": 3003,
+  "training_seconds": 0.47931495700504456,
+  "epochs_run": 41,
+  "best_epoch": 11,
   "configuration": {
     "embedding_dim": 8,
     "hidden_dim": 16,
@@ -16,30 +16,76 @@
     "patience": 30,
     "selection": "minimum validation loss"
   },
+  "labels": [
+    "noun",
+    "verb",
+    "other"
+  ],
   "baselines": {
-    "constant_noun_accuracy": 0.5,
-    "target_only_expected_accuracy": 0.5,
-    "note": "Every target has balanced labels in each split; target identity alone cannot distinguish labels."
+    "constant_label_accuracy": {
+      "noun": 0.49230769230769234,
+      "verb": 0.24615384615384617,
+      "other": 0.26153846153846155
+    },
+    "target_only_expected_accuracy": 0.7538461538461538,
+    "note": "Original ambiguous targets have balanced noun/verb labels. Additional noun-only and other-only targets can be distinguished by identity."
   },
   "train": {
-    "count": 192,
-    "loss": 0.0008531582573337342,
+    "count": 390,
+    "loss": 9.0271122600817e-05,
     "accuracy": 1.0,
-    "confusion_rows_actual_columns_predicted_noun_verb": [
+    "confusion_rows_actual_columns_predicted_noun_verb_other": [
       [
+        192,
+        0,
+        0
+      ],
+      [
+        0,
         96,
         0
       ],
       [
         0,
-        96
+        0,
+        102
       ]
     ],
     "context_oov_rate": 0.0,
     "examples_with_oov_context": 0,
     "by_target": {
+      "a": {
+        "count": 6,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "and": {
+        "count": 6,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
       "answer": {
         "count": 12,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "birds": {
+        "count": 6,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "boats": {
+        "count": 6,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "books": {
+        "count": 6,
         "accuracy": 1.0,
         "context_oov_rate": 0.0,
         "examples_with_oov_context": 0
@@ -56,8 +102,32 @@
         "context_oov_rate": 0.0,
         "examples_with_oov_context": 0
       },
+      "cars": {
+        "count": 6,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "cats": {
+        "count": 6,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "chairs": {
+        "count": 6,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
       "dance": {
         "count": 12,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "dogs": {
+        "count": 6,
         "accuracy": 1.0,
         "context_oov_rate": 0.0,
         "examples_with_oov_context": 0
@@ -74,14 +144,68 @@
         "context_oov_rate": 0.0,
         "examples_with_oov_context": 0
       },
+      "flowers": {
+        "count": 6,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "friends": {
+        "count": 6,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "happy": {
+        "count": 6,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "horses": {
+        "count": 6,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "houses": {
+        "count": 6,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "i": {
+        "count": 6,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
       "kick": {
         "count": 12,
         "accuracy": 1.0,
         "context_oov_rate": 0.0,
         "examples_with_oov_context": 0
       },
+      "lamps": {
+        "count": 6,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
       "light": {
         "count": 12,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "my": {
+        "count": 6,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "not": {
+        "count": 6,
         "accuracy": 1.0,
         "context_oov_rate": 0.0,
         "examples_with_oov_context": 0
@@ -104,6 +228,18 @@
         "context_oov_rate": 0.0,
         "examples_with_oov_context": 0
       },
+      "please": {
+        "count": 6,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "quickly": {
+        "count": 6,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
       "run": {
         "count": 12,
         "accuracy": 1.0,
@@ -112,6 +248,60 @@
       },
       "smile": {
         "count": 12,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "stars": {
+        "count": 6,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "students": {
+        "count": 6,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "teachers": {
+        "count": 6,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "the": {
+        "count": 6,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "they": {
+        "count": 6,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "this": {
+        "count": 6,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "to": {
+        "count": 6,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "trees": {
+        "count": 6,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "very": {
+        "count": 6,
         "accuracy": 1.0,
         "context_oov_rate": 0.0,
         "examples_with_oov_context": 0
@@ -133,9 +323,69 @@
         "accuracy": 1.0,
         "context_oov_rate": 0.0,
         "examples_with_oov_context": 0
+      },
+      "we": {
+        "count": 6,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "with": {
+        "count": 6,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "you": {
+        "count": 6,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "your": {
+        "count": 6,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
       }
     },
     "by_template_family": {
+      "broad_noun_01": {
+        "count": 16,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "broad_noun_02": {
+        "count": 16,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "broad_noun_03": {
+        "count": 16,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "broad_noun_04": {
+        "count": 16,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "broad_noun_05": {
+        "count": 16,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "broad_noun_06": {
+        "count": 16,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
       "determiner_noun_subject": {
         "count": 48,
         "accuracy": 1.0,
@@ -144,6 +394,108 @@
       },
       "noun_direct_object": {
         "count": 48,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "other_a": {
+        "count": 6,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "other_and": {
+        "count": 6,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "other_happy": {
+        "count": 6,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "other_i": {
+        "count": 6,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "other_my": {
+        "count": 6,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "other_not": {
+        "count": 6,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "other_please": {
+        "count": 6,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "other_quickly": {
+        "count": 6,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "other_the": {
+        "count": 6,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "other_they": {
+        "count": 6,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "other_this": {
+        "count": 6,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "other_to": {
+        "count": 6,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "other_very": {
+        "count": 6,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "other_we": {
+        "count": 6,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "other_with": {
+        "count": 6,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "other_you": {
+        "count": 6,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "other_your": {
+        "count": 6,
         "accuracy": 1.0,
         "context_oov_rate": 0.0,
         "examples_with_oov_context": 0
@@ -169,125 +521,444 @@
     }
   },
   "validation": {
-    "count": 64,
-    "loss": 0.26169264598159747,
-    "accuracy": 0.84375,
-    "confusion_rows_actual_columns_predicted_noun_verb": [
+    "count": 130,
+    "loss": 0.11641613730654235,
+    "accuracy": 0.9384615384615385,
+    "confusion_rows_actual_columns_predicted_noun_verb_other": [
       [
-        32,
+        64,
+        0,
         0
       ],
       [
-        10,
-        22
+        8,
+        24,
+        0
+      ],
+      [
+        0,
+        0,
+        34
       ]
     ],
-    "context_oov_rate": 0.46116504854368934,
-    "examples_with_oov_context": 48,
+    "context_oov_rate": 0.1806282722513089,
+    "examples_with_oov_context": 56,
     "by_target": {
+      "a": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.25,
+        "examples_with_oov_context": 2
+      },
+      "and": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
       "answer": {
         "count": 4,
-        "accuracy": 0.75,
-        "context_oov_rate": 0.46153846153846156,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.3076923076923077,
         "examples_with_oov_context": 3
+      },
+      "birds": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "boats": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "books": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
       },
       "brush": {
         "count": 4,
-        "accuracy": 0.75,
-        "context_oov_rate": 0.46153846153846156,
-        "examples_with_oov_context": 3
+        "accuracy": 1.0,
+        "context_oov_rate": 0.15384615384615385,
+        "examples_with_oov_context": 2
       },
       "call": {
         "count": 4,
-        "accuracy": 0.5,
-        "context_oov_rate": 0.5833333333333334,
+        "accuracy": 0.75,
+        "context_oov_rate": 0.3333333333333333,
         "examples_with_oov_context": 3
+      },
+      "cars": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "cats": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "chairs": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
       },
       "dance": {
         "count": 4,
         "accuracy": 1.0,
-        "context_oov_rate": 0.38461538461538464,
+        "context_oov_rate": 0.23076923076923078,
         "examples_with_oov_context": 3
+      },
+      "dogs": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
       },
       "dream": {
         "count": 4,
         "accuracy": 1.0,
-        "context_oov_rate": 0.46153846153846156,
+        "context_oov_rate": 0.3076923076923077,
         "examples_with_oov_context": 3
       },
       "drink": {
         "count": 4,
         "accuracy": 0.5,
-        "context_oov_rate": 0.5384615384615384,
+        "context_oov_rate": 0.38461538461538464,
         "examples_with_oov_context": 3
       },
+      "flowers": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "friends": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "happy": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "horses": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "houses": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "i": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
       "kick": {
+        "count": 4,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.23076923076923078,
+        "examples_with_oov_context": 3
+      },
+      "lamps": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "light": {
         "count": 4,
         "accuracy": 1.0,
         "context_oov_rate": 0.38461538461538464,
         "examples_with_oov_context": 3
       },
-      "light": {
-        "count": 4,
-        "accuracy": 0.75,
-        "context_oov_rate": 0.5384615384615384,
-        "examples_with_oov_context": 3
+      "my": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.25,
+        "examples_with_oov_context": 2
+      },
+      "not": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
       },
       "park": {
         "count": 4,
         "accuracy": 1.0,
-        "context_oov_rate": 0.3076923076923077,
-        "examples_with_oov_context": 3
+        "context_oov_rate": 0.15384615384615385,
+        "examples_with_oov_context": 2
       },
       "plant": {
         "count": 4,
         "accuracy": 0.5,
-        "context_oov_rate": 0.5,
+        "context_oov_rate": 0.3333333333333333,
         "examples_with_oov_context": 3
       },
       "play": {
         "count": 4,
         "accuracy": 1.0,
-        "context_oov_rate": 0.5384615384615384,
+        "context_oov_rate": 0.38461538461538464,
         "examples_with_oov_context": 3
+      },
+      "please": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "quickly": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
       },
       "run": {
         "count": 4,
         "accuracy": 1.0,
-        "context_oov_rate": 0.38461538461538464,
+        "context_oov_rate": 0.23076923076923078,
         "examples_with_oov_context": 3
       },
       "smile": {
         "count": 4,
-        "accuracy": 1.0,
-        "context_oov_rate": 0.5384615384615384,
+        "accuracy": 0.75,
+        "context_oov_rate": 0.3076923076923077,
         "examples_with_oov_context": 3
+      },
+      "stars": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "students": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "teachers": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "the": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "they": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "this": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.25,
+        "examples_with_oov_context": 2
+      },
+      "to": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.125,
+        "examples_with_oov_context": 1
+      },
+      "trees": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "very": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
       },
       "walk": {
         "count": 4,
         "accuracy": 1.0,
-        "context_oov_rate": 0.3076923076923077,
-        "examples_with_oov_context": 3
+        "context_oov_rate": 0.15384615384615385,
+        "examples_with_oov_context": 2
       },
       "watch": {
         "count": 4,
         "accuracy": 0.75,
-        "context_oov_rate": 0.5384615384615384,
+        "context_oov_rate": 0.38461538461538464,
         "examples_with_oov_context": 3
       },
       "wave": {
         "count": 4,
-        "accuracy": 1.0,
-        "context_oov_rate": 0.46153846153846156,
+        "accuracy": 0.75,
+        "context_oov_rate": 0.23076923076923078,
         "examples_with_oov_context": 3
+      },
+      "we": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "with": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.25,
+        "examples_with_oov_context": 2
+      },
+      "you": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "your": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.25,
+        "examples_with_oov_context": 2
       }
     },
     "by_template_family": {
+      "broad_noun_07": {
+        "count": 16,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "broad_noun_08": {
+        "count": 16,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
       "noun_prepositional_object": {
         "count": 16,
         "accuracy": 1.0,
         "context_oov_rate": 0.0,
         "examples_with_oov_context": 0
+      },
+      "other_a": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.25,
+        "examples_with_oov_context": 2
+      },
+      "other_and": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "other_happy": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "other_i": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "other_my": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.25,
+        "examples_with_oov_context": 2
+      },
+      "other_not": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "other_please": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "other_quickly": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "other_the": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "other_they": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "other_this": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.25,
+        "examples_with_oov_context": 2
+      },
+      "other_to": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.125,
+        "examples_with_oov_context": 1
+      },
+      "other_very": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "other_we": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "other_with": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.25,
+        "examples_with_oov_context": 2
+      },
+      "other_you": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "other_your": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.25,
+        "examples_with_oov_context": 2
       },
       "possessive_noun_subject": {
         "count": 16,
@@ -298,132 +969,349 @@
       "verb_infinitive": {
         "count": 16,
         "accuracy": 0.75,
-        "context_oov_rate": 0.4444444444444444,
+        "context_oov_rate": 0.38095238095238093,
         "examples_with_oov_context": 16
       },
       "verb_negation": {
         "count": 16,
-        "accuracy": 0.625,
-        "context_oov_rate": 0.8095238095238095,
-        "examples_with_oov_context": 16
+        "accuracy": 0.75,
+        "context_oov_rate": 0.2857142857142857,
+        "examples_with_oov_context": 13
       }
     }
   },
   "test": {
-    "count": 64,
-    "loss": 0.16528939494039785,
-    "accuracy": 0.96875,
-    "confusion_rows_actual_columns_predicted_noun_verb": [
+    "count": 130,
+    "loss": 0.06924029732527057,
+    "accuracy": 0.9769230769230769,
+    "confusion_rows_actual_columns_predicted_noun_verb_other": [
       [
+        61,
+        3,
+        0
+      ],
+      [
+        0,
         32,
         0
       ],
       [
-        2,
-        30
+        0,
+        0,
+        34
       ]
     ],
-    "context_oov_rate": 0.5804878048780487,
-    "examples_with_oov_context": 62,
+    "context_oov_rate": 0.3805774278215223,
+    "examples_with_oov_context": 91,
     "by_target": {
+      "a": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.5,
+        "examples_with_oov_context": 2
+      },
+      "and": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.25,
+        "examples_with_oov_context": 2
+      },
       "answer": {
         "count": 4,
         "accuracy": 1.0,
-        "context_oov_rate": 0.6923076923076923,
+        "context_oov_rate": 0.6153846153846154,
         "examples_with_oov_context": 4
+      },
+      "birds": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.25,
+        "examples_with_oov_context": 1
+      },
+      "boats": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.25,
+        "examples_with_oov_context": 1
+      },
+      "books": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.25,
+        "examples_with_oov_context": 1
       },
       "brush": {
         "count": 4,
         "accuracy": 1.0,
-        "context_oov_rate": 0.38461538461538464,
-        "examples_with_oov_context": 3
+        "context_oov_rate": 0.3076923076923077,
+        "examples_with_oov_context": 2
       },
       "call": {
         "count": 4,
         "accuracy": 1.0,
-        "context_oov_rate": 0.5384615384615384,
+        "context_oov_rate": 0.46153846153846156,
         "examples_with_oov_context": 4
+      },
+      "cars": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.25,
+        "examples_with_oov_context": 1
+      },
+      "cats": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.25,
+        "examples_with_oov_context": 1
+      },
+      "chairs": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.25,
+        "examples_with_oov_context": 1
       },
       "dance": {
         "count": 4,
         "accuracy": 1.0,
-        "context_oov_rate": 0.5384615384615384,
+        "context_oov_rate": 0.46153846153846156,
         "examples_with_oov_context": 4
+      },
+      "dogs": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.25,
+        "examples_with_oov_context": 1
       },
       "dream": {
         "count": 4,
         "accuracy": 1.0,
-        "context_oov_rate": 0.5384615384615384,
+        "context_oov_rate": 0.46153846153846156,
         "examples_with_oov_context": 3
       },
       "drink": {
         "count": 4,
         "accuracy": 0.75,
-        "context_oov_rate": 0.6666666666666666,
+        "context_oov_rate": 0.5833333333333334,
         "examples_with_oov_context": 4
+      },
+      "flowers": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.25,
+        "examples_with_oov_context": 1
+      },
+      "friends": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.25,
+        "examples_with_oov_context": 1
+      },
+      "happy": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "horses": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.25,
+        "examples_with_oov_context": 1
+      },
+      "houses": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.25,
+        "examples_with_oov_context": 1
+      },
+      "i": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
       },
       "kick": {
         "count": 4,
         "accuracy": 1.0,
-        "context_oov_rate": 0.6153846153846154,
-        "examples_with_oov_context": 4
+        "context_oov_rate": 0.5384615384615384,
+        "examples_with_oov_context": 3
+      },
+      "lamps": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.25,
+        "examples_with_oov_context": 1
       },
       "light": {
         "count": 4,
         "accuracy": 1.0,
-        "context_oov_rate": 0.6153846153846154,
+        "context_oov_rate": 0.5384615384615384,
         "examples_with_oov_context": 4
+      },
+      "my": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.5,
+        "examples_with_oov_context": 2
+      },
+      "not": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
       },
       "park": {
         "count": 4,
         "accuracy": 1.0,
-        "context_oov_rate": 0.46153846153846156,
-        "examples_with_oov_context": 4
+        "context_oov_rate": 0.38461538461538464,
+        "examples_with_oov_context": 3
       },
       "plant": {
         "count": 4,
         "accuracy": 0.75,
-        "context_oov_rate": 0.75,
+        "context_oov_rate": 0.6666666666666666,
         "examples_with_oov_context": 4
       },
       "play": {
         "count": 4,
         "accuracy": 1.0,
-        "context_oov_rate": 0.6666666666666666,
+        "context_oov_rate": 0.5833333333333334,
         "examples_with_oov_context": 4
       },
+      "please": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "quickly": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
       "run": {
+        "count": 4,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.38461538461538464,
+        "examples_with_oov_context": 3
+      },
+      "smile": {
         "count": 4,
         "accuracy": 1.0,
         "context_oov_rate": 0.46153846153846156,
         "examples_with_oov_context": 4
       },
-      "smile": {
-        "count": 4,
+      "stars": {
+        "count": 2,
         "accuracy": 1.0,
-        "context_oov_rate": 0.5384615384615384,
-        "examples_with_oov_context": 4
+        "context_oov_rate": 0.25,
+        "examples_with_oov_context": 1
+      },
+      "students": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.25,
+        "examples_with_oov_context": 1
+      },
+      "teachers": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.25,
+        "examples_with_oov_context": 1
+      },
+      "the": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.25,
+        "examples_with_oov_context": 2
+      },
+      "they": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "this": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.5,
+        "examples_with_oov_context": 2
+      },
+      "to": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.25,
+        "examples_with_oov_context": 2
+      },
+      "trees": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.25,
+        "examples_with_oov_context": 1
+      },
+      "very": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.25,
+        "examples_with_oov_context": 2
       },
       "walk": {
-        "count": 4,
-        "accuracy": 1.0,
-        "context_oov_rate": 0.6923076923076923,
-        "examples_with_oov_context": 4
-      },
-      "watch": {
         "count": 4,
         "accuracy": 1.0,
         "context_oov_rate": 0.6153846153846154,
         "examples_with_oov_context": 4
       },
-      "wave": {
+      "watch": {
         "count": 4,
         "accuracy": 1.0,
         "context_oov_rate": 0.5384615384615384,
         "examples_with_oov_context": 4
+      },
+      "wave": {
+        "count": 4,
+        "accuracy": 0.75,
+        "context_oov_rate": 0.46153846153846156,
+        "examples_with_oov_context": 3
+      },
+      "we": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "with": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.25,
+        "examples_with_oov_context": 2
+      },
+      "you": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "your": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.5,
+        "examples_with_oov_context": 2
       }
     },
     "by_template_family": {
+      "broad_noun_09": {
+        "count": 16,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "broad_noun_10": {
+        "count": 16,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.5,
+        "examples_with_oov_context": 16
+      },
       "noun_exclamation": {
         "count": 16,
         "accuracy": 1.0,
@@ -432,15 +1320,117 @@
       },
       "noun_subject_question": {
         "count": 16,
-        "accuracy": 1.0,
+        "accuracy": 0.8125,
         "context_oov_rate": 0.9583333333333334,
         "examples_with_oov_context": 16
       },
+      "other_a": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.5,
+        "examples_with_oov_context": 2
+      },
+      "other_and": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.25,
+        "examples_with_oov_context": 2
+      },
+      "other_happy": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "other_i": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "other_my": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.5,
+        "examples_with_oov_context": 2
+      },
+      "other_not": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "other_please": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "other_quickly": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "other_the": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.25,
+        "examples_with_oov_context": 2
+      },
+      "other_they": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "other_this": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.5,
+        "examples_with_oov_context": 2
+      },
+      "other_to": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.25,
+        "examples_with_oov_context": 2
+      },
+      "other_very": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.25,
+        "examples_with_oov_context": 2
+      },
+      "other_we": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "other_with": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.25,
+        "examples_with_oov_context": 2
+      },
+      "other_you": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.0,
+        "examples_with_oov_context": 0
+      },
+      "other_your": {
+        "count": 2,
+        "accuracy": 1.0,
+        "context_oov_rate": 0.5,
+        "examples_with_oov_context": 2
+      },
       "verb_question": {
         "count": 16,
-        "accuracy": 0.875,
-        "context_oov_rate": 0.45901639344262296,
-        "examples_with_oov_context": 16
+        "accuracy": 1.0,
+        "context_oov_rate": 0.19672131147540983,
+        "examples_with_oov_context": 11
       },
       "verb_subordinate_clause": {
         "count": 16,

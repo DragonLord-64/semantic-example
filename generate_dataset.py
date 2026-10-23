@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate a small, fully synthetic noun/verb teaching dataset; standard library only."""
+"""Generate a small, fully synthetic noun/verb/other teaching dataset; standard library only."""
 import json
 import re
 from collections import Counter
@@ -59,6 +59,38 @@ AFTER = {
     "dream": "anything seems possible", "light": "the wood begins to glow",
 }
 
+# Broaden the target vocabulary beyond words that can be both nouns and verbs.
+# For these examples, contexts (rather than template families) are held out.
+NOUN_TARGETS = ("birds", "boats", "dogs", "cats", "trees", "books", "teachers",
+                "students", "flowers", "stars", "friends", "cars", "houses",
+                "horses", "lamps", "chairs")
+OTHER_PATTERNS = {
+    "they": "They watch the {plural}.",
+    "we": "We watch the {plural}.",
+    "you": "You watch the {plural}.",
+    "i": "I watch the {plural}.",
+    "the": "They watch the {plural}.",
+    "a": "They see a {singular}.",
+    "this": "They see this {singular}.",
+    "my": "They see my {singular}.",
+    "your": "They see your {singular}.",
+    "to": "They walk to the {place}.",
+    "with": "They play with the {singular}.",
+    "and": "They watch the {plural} and smile.",
+    "quickly": "They quickly notice the {plural}.",
+    "very": "The {plural} are very quiet.",
+    "happy": "The happy {plural} play outside.",
+    "not": "They do not watch the {plural}.",
+    "please": "Please watch the {plural}.",
+}
+PLURALS = ("birds", "dogs", "cats", "horses", "students", "friends",
+           "teachers", "boats", "cars", "flowers")
+SINGULARS = ("bird", "dog", "cat", "horse", "student", "friend",
+             "teacher", "child", "puppy", "kitten")
+PLACES = ("park", "school", "lake", "shop", "house", "garden",
+          "beach", "river", "station", "bridge")
+
+
 def build():
     rows = []
     for line in NOUN_DATA.splitlines():
@@ -99,27 +131,62 @@ def build():
                 rows.append(dict(id=f"{word}-{label}-{i+1:02d}", sentence=sentence,
                                  target=word, target_index=matches[0], label=label,
                                  split=split, template_family=family))
+    noun_patterns = [
+        "They watch the {word}.", "The {word} are outside.",
+        "We see the {word}.", "You notice these {word}.",
+        "I like the {word}.", "She likes those {word}.",
+        "Can you see the {word}?", "We talked about the {word}.",
+        "Where are the {word}?", "Look at those beautiful {word}!",
+    ]
+    for word in NOUN_TARGETS:
+        for i, pattern in enumerate(noun_patterns):
+            sentence = pattern.format(word=word)
+            tokens = re.findall(TOKEN_PATTERN, sentence.lower())
+            split = "train" if i < 6 else "validation" if i < 8 else "test"
+            rows.append(dict(id=f"{word}-noun-{i+1:02d}", sentence=sentence,
+                             target=word, target_index=tokens.index(word), label="noun",
+                             split=split, template_family=f"broad_noun_{i+1:02d}"))
+    for word, pattern in OTHER_PATTERNS.items():
+        for i in range(10):
+            sentence = pattern.format(plural=PLURALS[i], singular=SINGULARS[i],
+                                      place=PLACES[i])
+            if i >= 6:
+                sentence = sentence[:-1] + (" today." if i < 8 else " again.")
+            tokens = re.findall(TOKEN_PATTERN, sentence.lower())
+            split = "train" if i < 6 else "validation" if i < 8 else "test"
+            rows.append(dict(id=f"{word}-other-{i+1:02d}", sentence=sentence,
+                             target=word, target_index=tokens.index(word), label="other",
+                             split=split, template_family="other_" + word))
     return rows
 
 def audit(rows):
-    assert len(rows) == 320
-    assert len({r["id"] for r in rows}) == 320
-    assert len({r["sentence"].lower() for r in rows}) == 320
-    assert set(VERB_DATA) == {r["target"] for r in rows}
+    assert len(rows) == 320 + 10 * (len(NOUN_TARGETS) + len(OTHER_PATTERNS))
+    assert len({r["id"] for r in rows}) == len(rows)
+    # A sentence can annotate multiple target positions, but a supervised
+    # sentence/position pair must be unique and stay in one split.
+    assert len({(r["sentence"].lower(), r["target_index"]) for r in rows}) == len(rows)
     expected = {"train": 6, "validation": 2, "test": 2}
     counts = Counter((r["target"], r["label"], r["split"]) for r in rows)
     for word in VERB_DATA:
         for label in ("noun", "verb"):
             for split, n in expected.items():
                 assert counts[word, label, split] == n
-    families = {}
-    for r in rows:
-        tokens = re.findall(TOKEN_PATTERN, r["sentence"])
-        assert tokens[r["target_index"]].lower() == r["target"]
-        assert r["label"] in ("noun", "verb")
-        families.setdefault(r["template_family"], set()).add(r["split"])
-    assert all(len(splits) == 1 for splits in families.values())
-    return {"examples": len(rows), "targets": list(VERB_DATA),
+    for targets, label in [(NOUN_TARGETS, "noun"), (OTHER_PATTERNS, "other")]:
+        for word in targets:
+            for split, n in expected.items():
+                assert counts[word, label, split] == n
+    families, sentence_splits = {}, {}
+    for row in rows:
+        tokens = re.findall(TOKEN_PATTERN, row["sentence"])
+        assert tokens[row["target_index"]].lower() == row["target"]
+        assert row["label"] in ("noun", "verb", "other")
+        families.setdefault(row["template_family"], set()).add(row["split"])
+        sentence_splits.setdefault(row["sentence"].lower(), set()).add(row["split"])
+    assert all(len(splits) == 1 for splits in sentence_splits.values())
+    assert all(len(splits) == 1 for family, splits in families.items()
+               if not family.startswith("other_"))
+    return {"examples": len(rows), "targets": sorted({r["target"] for r in rows}),
+            "labels": ["noun", "verb", "other"],
             "counts_by_split": dict(Counter(r["split"] for r in rows)),
             "counts_by_label": dict(Counter(r["label"] for r in rows)),
             "template_families_by_split": {
@@ -127,8 +194,9 @@ def audit(rows):
                 for split in expected},
             "token_pattern": TOKEN_PATTERN, "target_index_base": 0,
             "source": "Hand-authored synthetic examples expanded by deterministic templates",
-            "checks": ["unique IDs and sentences", "balanced labels per target and split",
-                       "valid target indices", "template families disjoint across splits"]}
+            "split_strategy": "Noun/verb templates are disjoint across splits. Other-label targets share templates with held-out context words. Full sentences never cross splits.",
+            "checks": ["unique IDs and sentence/target pairs", "6/2/2 rows per target and label",
+                       "valid target indices", "no sentence overlap across splits"]}
 
 if __name__ == "__main__":
     dataset = build()

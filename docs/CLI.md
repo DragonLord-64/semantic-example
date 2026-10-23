@@ -10,7 +10,7 @@ Each run starts fresh and replaces outputs in `results/`. Data paths are relativ
 
 ## Display
 
-The table shows epoch, training/validation loss and accuracy, and best epoch. Lower loss means better-fitting probabilities; accuracy counts correct noun/verb decisions at the 50% threshold.
+The table shows epoch, training/validation loss and accuracy, and best epoch. Lower loss means better-fitting probabilities; accuracy counts correct noun, verb, or other predictions using the most probable label.
 
 Validation loss selects the checkpoint. Test results appear after training, with confusion-matrix rows showing actual labels and columns showing predictions. Diagonal entries are correct.
 
@@ -23,7 +23,7 @@ Ctrl-C stops training. Complete a new run before using final results; an interru
 - `best_model.npz`: selected weights and vocabulary.
 - `history.json`: training and validation curves.
 - `report.json`: configuration, timing, and metrics.
-- `predictions.jsonl`: test predictions.
+- `predictions.jsonl`: training, validation, and test predictions.
 - `one_update.json`: illustrative SGD update; full training uses Adam.
 
 All outputs live in `results/`. See [training](TRAINING.md) and [prediction](PREDICTION.md).

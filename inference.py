@@ -3,14 +3,10 @@ import argparse
 from pathlib import Path
 import sys
 
-from model import ContextModel, PAD, UNK, encode, tokenize
+from model import ContextModel, LABELS, PAD, UNK, encode, tokenize
 
 HERE = Path(__file__).resolve().parent
 CHECKPOINT = HERE / 'results' / 'best_model.npz'
-# Supervised targets, not every word in the context vocabulary.
-TARGETS = frozenset(('watch', 'play', 'call', 'walk', 'run', 'drink', 'kick',
-                     'park', 'plant', 'dance', 'brush', 'wave', 'smile',
-                     'answer', 'dream', 'light'))
 
 
 def load_model(checkpoint=CHECKPOINT):
@@ -39,20 +35,20 @@ class Predictor:
         row = {'id': 'inference', 'sentence': sentence, 'target': target,
                'target_index': target_index, 'label': 'noun'}
         windows, _ = encode([row], self.model.vocab)
-        verb_probability = float(self.model.predict(windows)[0])
+        probabilities = self.model.predict(windows)[0]
         context = [words[i] if 0 <= i < len(words) else PAD
                    for i in range(target_index - 2, target_index + 3)]
         return {'token': target, 'target_index': target_index,
-                'trained_target': target in TARGETS,
+                'trained_target': target in self.model.targets,
                 'status': 'classified', 'context': context,
                 'window_ids': windows[0].tolist(),
                 'unknown_context': sorted({word for offset, word in enumerate(context)
                                            if offset != 2 and word != PAD
                                            and word not in self.model.vocab}),
                 'unknown_target': target not in self.model.vocab,
-                'noun_probability': 1 - verb_probability,
-                'verb_probability': verb_probability,
-                'prediction': 'verb' if verb_probability >= 0.5 else 'noun'}
+                **{f'{label}_probability': float(probabilities[i])
+                   for i, label in enumerate(LABELS)},
+                'prediction': LABELS[int(probabilities.argmax())]}
 
     def predict_word(self, sentence, word):
         """Select a word occurring exactly once; repeated words need an index."""
@@ -66,10 +62,8 @@ class Predictor:
         return self.predict(sentence, positions[0])
 
     def predict_sentence(self, sentence):
-        """Optional demo helper: classify known targets only, not all-word tagging."""
-        return [self.predict(sentence, i) if word in TARGETS else
-                {'token': word, 'target_index': i, 'status': 'unsupported'}
-                for i, word in enumerate(tokenize(sentence))]
+        """Classify each token in its original sentence context."""
+        return [self.predict(sentence, i) for i, _ in enumerate(tokenize(sentence))]
 
 
 def predict_sentence(sentence, predictor=None):
@@ -82,21 +76,14 @@ def predict_sentence(sentence, predictor=None):
 def display(sentence, records):
     print(f'Sentence: {sentence}')
     print('Positions below are 1-based; Python API indices are 0-based.')
-    print(f"{'#':>3}  {'Token':<16} {'Result':<14} {'P(noun)':>9} {'P(verb)':>9}")
-    print('-' * 59)
-    classified = []
+    print(f"{'#':>3}  {'Token':<16} {'Result':<14} "
+          f"{'P(noun)':>9} {'P(verb)':>9} {'P(other)':>9}")
+    print('-' * 69)
     for result in records:
-        if result['status'] == 'classified':
-            classified.append(result)
-            print(f"{result['target_index'] + 1:>3}  {result['token']:<16} "
-                  f"{result['prediction']:<14} {result['noun_probability']:>9.2%} "
-                  f"{result['verb_probability']:>9.2%}")
-        else:
-            print(f"{result['target_index'] + 1:>3}  {result['token']:<16} "
-                  f"{'not classified':<14} {'-':>9} {'-':>9}")
-    if not classified:
-        print('\nNo supported target words found. Try: They watch the watch.')
-    for result in classified:
+        print(f"{result['target_index'] + 1:>3}  {result['token']:<16} "
+              f"{result['prediction']:<14} {result['noun_probability']:>9.2%} "
+              f"{result['verb_probability']:>9.2%} {result['other_probability']:>9.2%}")
+    for result in records:
         context = ' | '.join(f'[{word}]' if offset == 2 else word
                              for offset, word in enumerate(result['context']))
         print(f"\nToken {result['target_index'] + 1} context: {context}")
@@ -106,8 +93,8 @@ def display(sentence, records):
             print(f'Unseen context mapped to {UNK}: ' + ', '.join(result['unknown_context']))
         if not result['trained_target']:
             print('Warning: this word was not a supervised target during training.')
-    print('\nThis binary model classifies the selected occurrence as noun or verb.')
-    print('Other roles are unsupported; probabilities do not guarantee correctness.')
+    print('\nLabels: noun, verb, or other (pronouns, determiners, and other roles).')
+    print('This synthetic teaching model can be wrong, even with high confidence.')
 
 
 def main(argv=None):

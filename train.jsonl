@@ -190,3 +190,201 @@
 {"id": "light-verb-04", "sentence": "Light this candle!", "target": "light", "target_index": 0, "label": "verb", "split": "train", "template_family": "verb_imperative"}
 {"id": "light-verb-05", "sentence": "We can light the stove.", "target": "light", "target_index": 2, "label": "verb", "split": "train", "template_family": "verb_modal"}
 {"id": "light-verb-06", "sentence": "You must light a lantern.", "target": "light", "target_index": 2, "label": "verb", "split": "train", "template_family": "verb_modal"}
+{"id": "birds-noun-01", "sentence": "They watch the birds.", "target": "birds", "target_index": 3, "label": "noun", "split": "train", "template_family": "broad_noun_01"}
+{"id": "birds-noun-02", "sentence": "The birds are outside.", "target": "birds", "target_index": 1, "label": "noun", "split": "train", "template_family": "broad_noun_02"}
+{"id": "birds-noun-03", "sentence": "We see the birds.", "target": "birds", "target_index": 3, "label": "noun", "split": "train", "template_family": "broad_noun_03"}
+{"id": "birds-noun-04", "sentence": "You notice these birds.", "target": "birds", "target_index": 3, "label": "noun", "split": "train", "template_family": "broad_noun_04"}
+{"id": "birds-noun-05", "sentence": "I like the birds.", "target": "birds", "target_index": 3, "label": "noun", "split": "train", "template_family": "broad_noun_05"}
+{"id": "birds-noun-06", "sentence": "She likes those birds.", "target": "birds", "target_index": 3, "label": "noun", "split": "train", "template_family": "broad_noun_06"}
+{"id": "boats-noun-01", "sentence": "They watch the boats.", "target": "boats", "target_index": 3, "label": "noun", "split": "train", "template_family": "broad_noun_01"}
+{"id": "boats-noun-02", "sentence": "The boats are outside.", "target": "boats", "target_index": 1, "label": "noun", "split": "train", "template_family": "broad_noun_02"}
+{"id": "boats-noun-03", "sentence": "We see the boats.", "target": "boats", "target_index": 3, "label": "noun", "split": "train", "template_family": "broad_noun_03"}
+{"id": "boats-noun-04", "sentence": "You notice these boats.", "target": "boats", "target_index": 3, "label": "noun", "split": "train", "template_family": "broad_noun_04"}
+{"id": "boats-noun-05", "sentence": "I like the boats.", "target": "boats", "target_index": 3, "label": "noun", "split": "train", "template_family": "broad_noun_05"}
+{"id": "boats-noun-06", "sentence": "She likes those boats.", "target": "boats", "target_index": 3, "label": "noun", "split": "train", "template_family": "broad_noun_06"}
+{"id": "dogs-noun-01", "sentence": "They watch the dogs.", "target": "dogs", "target_index": 3, "label": "noun", "split": "train", "template_family": "broad_noun_01"}
+{"id": "dogs-noun-02", "sentence": "The dogs are outside.", "target": "dogs", "target_index": 1, "label": "noun", "split": "train", "template_family": "broad_noun_02"}
+{"id": "dogs-noun-03", "sentence": "We see the dogs.", "target": "dogs", "target_index": 3, "label": "noun", "split": "train", "template_family": "broad_noun_03"}
+{"id": "dogs-noun-04", "sentence": "You notice these dogs.", "target": "dogs", "target_index": 3, "label": "noun", "split": "train", "template_family": "broad_noun_04"}
+{"id": "dogs-noun-05", "sentence": "I like the dogs.", "target": "dogs", "target_index": 3, "label": "noun", "split": "train", "template_family": "broad_noun_05"}
+{"id": "dogs-noun-06", "sentence": "She likes those dogs.", "target": "dogs", "target_index": 3, "label": "noun", "split": "train", "template_family": "broad_noun_06"}
+{"id": "cats-noun-01", "sentence": "They watch the cats.", "target": "cats", "target_index": 3, "label": "noun", "split": "train", "template_family": "broad_noun_01"}
+{"id": "cats-noun-02", "sentence": "The cats are outside.", "target": "cats", "target_index": 1, "label": "noun", "split": "train", "template_family": "broad_noun_02"}
+{"id": "cats-noun-03", "sentence": "We see the cats.", "target": "cats", "target_index": 3, "label": "noun", "split": "train", "template_family": "broad_noun_03"}
+{"id": "cats-noun-04", "sentence": "You notice these cats.", "target": "cats", "target_index": 3, "label": "noun", "split": "train", "template_family": "broad_noun_04"}
+{"id": "cats-noun-05", "sentence": "I like the cats.", "target": "cats", "target_index": 3, "label": "noun", "split": "train", "template_family": "broad_noun_05"}
+{"id": "cats-noun-06", "sentence": "She likes those cats.", "target": "cats", "target_index": 3, "label": "noun", "split": "train", "template_family": "broad_noun_06"}
+{"id": "trees-noun-01", "sentence": "They watch the trees.", "target": "trees", "target_index": 3, "label": "noun", "split": "train", "template_family": "broad_noun_01"}
+{"id": "trees-noun-02", "sentence": "The trees are outside.", "target": "trees", "target_index": 1, "label": "noun", "split": "train", "template_family": "broad_noun_02"}
+{"id": "trees-noun-03", "sentence": "We see the trees.", "target": "trees", "target_index": 3, "label": "noun", "split": "train", "template_family": "broad_noun_03"}
+{"id": "trees-noun-04", "sentence": "You notice these trees.", "target": "trees", "target_index": 3, "label": "noun", "split": "train", "template_family": "broad_noun_04"}
+{"id": "trees-noun-05", "sentence": "I like the trees.", "target": "trees", "target_index": 3, "label": "noun", "split": "train", "template_family": "broad_noun_05"}
+{"id": "trees-noun-06", "sentence": "She likes those trees.", "target": "trees", "target_index": 3, "label": "noun", "split": "train", "template_family": "broad_noun_06"}
+{"id": "books-noun-01", "sentence": "They watch the books.", "target": "books", "target_index": 3, "label": "noun", "split": "train", "template_family": "broad_noun_01"}
+{"id": "books-noun-02", "sentence": "The books are outside.", "target": "books", "target_index": 1, "label": "noun", "split": "train", "template_family": "broad_noun_02"}
+{"id": "books-noun-03", "sentence": "We see the books.", "target": "books", "target_index": 3, "label": "noun", "split": "train", "template_family": "broad_noun_03"}
+{"id": "books-noun-04", "sentence": "You notice these books.", "target": "books", "target_index": 3, "label": "noun", "split": "train", "template_family": "broad_noun_04"}
+{"id": "books-noun-05", "sentence": "I like the books.", "target": "books", "target_index": 3, "label": "noun", "split": "train", "template_family": "broad_noun_05"}
+{"id": "books-noun-06", "sentence": "She likes those books.", "target": "books", "target_index": 3, "label": "noun", "split": "train", "template_family": "broad_noun_06"}
+{"id": "teachers-noun-01", "sentence": "They watch the teachers.", "target": "teachers", "target_index": 3, "label": "noun", "split": "train", "template_family": "broad_noun_01"}
+{"id": "teachers-noun-02", "sentence": "The teachers are outside.", "target": "teachers", "target_index": 1, "label": "noun", "split": "train", "template_family": "broad_noun_02"}
+{"id": "teachers-noun-03", "sentence": "We see the teachers.", "target": "teachers", "target_index": 3, "label": "noun", "split": "train", "template_family": "broad_noun_03"}
+{"id": "teachers-noun-04", "sentence": "You notice these teachers.", "target": "teachers", "target_index": 3, "label": "noun", "split": "train", "template_family": "broad_noun_04"}
+{"id": "teachers-noun-05", "sentence": "I like the teachers.", "target": "teachers", "target_index": 3, "label": "noun", "split": "train", "template_family": "broad_noun_05"}
+{"id": "teachers-noun-06", "sentence": "She likes those teachers.", "target": "teachers", "target_index": 3, "label": "noun", "split": "train", "template_family": "broad_noun_06"}
+{"id": "students-noun-01", "sentence": "They watch the students.", "target": "students", "target_index": 3, "label": "noun", "split": "train", "template_family": "broad_noun_01"}
+{"id": "students-noun-02", "sentence": "The students are outside.", "target": "students", "target_index": 1, "label": "noun", "split": "train", "template_family": "broad_noun_02"}
+{"id": "students-noun-03", "sentence": "We see the students.", "target": "students", "target_index": 3, "label": "noun", "split": "train", "template_family": "broad_noun_03"}
+{"id": "students-noun-04", "sentence": "You notice these students.", "target": "students", "target_index": 3, "label": "noun", "split": "train", "template_family": "broad_noun_04"}
+{"id": "students-noun-05", "sentence": "I like the students.", "target": "students", "target_index": 3, "label": "noun", "split": "train", "template_family": "broad_noun_05"}
+{"id": "students-noun-06", "sentence": "She likes those students.", "target": "students", "target_index": 3, "label": "noun", "split": "train", "template_family": "broad_noun_06"}
+{"id": "flowers-noun-01", "sentence": "They watch the flowers.", "target": "flowers", "target_index": 3, "label": "noun", "split": "train", "template_family": "broad_noun_01"}
+{"id": "flowers-noun-02", "sentence": "The flowers are outside.", "target": "flowers", "target_index": 1, "label": "noun", "split": "train", "template_family": "broad_noun_02"}
+{"id": "flowers-noun-03", "sentence": "We see the flowers.", "target": "flowers", "target_index": 3, "label": "noun", "split": "train", "template_family": "broad_noun_03"}
+{"id": "flowers-noun-04", "sentence": "You notice these flowers.", "target": "flowers", "target_index": 3, "label": "noun", "split": "train", "template_family": "broad_noun_04"}
+{"id": "flowers-noun-05", "sentence": "I like the flowers.", "target": "flowers", "target_index": 3, "label": "noun", "split": "train", "template_family": "broad_noun_05"}
+{"id": "flowers-noun-06", "sentence": "She likes those flowers.", "target": "flowers", "target_index": 3, "label": "noun", "split": "train", "template_family": "broad_noun_06"}
+{"id": "stars-noun-01", "sentence": "They watch the stars.", "target": "stars", "target_index": 3, "label": "noun", "split": "train", "template_family": "broad_noun_01"}
+{"id": "stars-noun-02", "sentence": "The stars are outside.", "target": "stars", "target_index": 1, "label": "noun", "split": "train", "template_family": "broad_noun_02"}
+{"id": "stars-noun-03", "sentence": "We see the stars.", "target": "stars", "target_index": 3, "label": "noun", "split": "train", "template_family": "broad_noun_03"}
+{"id": "stars-noun-04", "sentence": "You notice these stars.", "target": "stars", "target_index": 3, "label": "noun", "split": "train", "template_family": "broad_noun_04"}
+{"id": "stars-noun-05", "sentence": "I like the stars.", "target": "stars", "target_index": 3, "label": "noun", "split": "train", "template_family": "broad_noun_05"}
+{"id": "stars-noun-06", "sentence": "She likes those stars.", "target": "stars", "target_index": 3, "label": "noun", "split": "train", "template_family": "broad_noun_06"}
+{"id": "friends-noun-01", "sentence": "They watch the friends.", "target": "friends", "target_index": 3, "label": "noun", "split": "train", "template_family": "broad_noun_01"}
+{"id": "friends-noun-02", "sentence": "The friends are outside.", "target": "friends", "target_index": 1, "label": "noun", "split": "train", "template_family": "broad_noun_02"}
+{"id": "friends-noun-03", "sentence": "We see the friends.", "target": "friends", "target_index": 3, "label": "noun", "split": "train", "template_family": "broad_noun_03"}
+{"id": "friends-noun-04", "sentence": "You notice these friends.", "target": "friends", "target_index": 3, "label": "noun", "split": "train", "template_family": "broad_noun_04"}
+{"id": "friends-noun-05", "sentence": "I like the friends.", "target": "friends", "target_index": 3, "label": "noun", "split": "train", "template_family": "broad_noun_05"}
+{"id": "friends-noun-06", "sentence": "She likes those friends.", "target": "friends", "target_index": 3, "label": "noun", "split": "train", "template_family": "broad_noun_06"}
+{"id": "cars-noun-01", "sentence": "They watch the cars.", "target": "cars", "target_index": 3, "label": "noun", "split": "train", "template_family": "broad_noun_01"}
+{"id": "cars-noun-02", "sentence": "The cars are outside.", "target": "cars", "target_index": 1, "label": "noun", "split": "train", "template_family": "broad_noun_02"}
+{"id": "cars-noun-03", "sentence": "We see the cars.", "target": "cars", "target_index": 3, "label": "noun", "split": "train", "template_family": "broad_noun_03"}
+{"id": "cars-noun-04", "sentence": "You notice these cars.", "target": "cars", "target_index": 3, "label": "noun", "split": "train", "template_family": "broad_noun_04"}
+{"id": "cars-noun-05", "sentence": "I like the cars.", "target": "cars", "target_index": 3, "label": "noun", "split": "train", "template_family": "broad_noun_05"}
+{"id": "cars-noun-06", "sentence": "She likes those cars.", "target": "cars", "target_index": 3, "label": "noun", "split": "train", "template_family": "broad_noun_06"}
+{"id": "houses-noun-01", "sentence": "They watch the houses.", "target": "houses", "target_index": 3, "label": "noun", "split": "train", "template_family": "broad_noun_01"}
+{"id": "houses-noun-02", "sentence": "The houses are outside.", "target": "houses", "target_index": 1, "label": "noun", "split": "train", "template_family": "broad_noun_02"}
+{"id": "houses-noun-03", "sentence": "We see the houses.", "target": "houses", "target_index": 3, "label": "noun", "split": "train", "template_family": "broad_noun_03"}
+{"id": "houses-noun-04", "sentence": "You notice these houses.", "target": "houses", "target_index": 3, "label": "noun", "split": "train", "template_family": "broad_noun_04"}
+{"id": "houses-noun-05", "sentence": "I like the houses.", "target": "houses", "target_index": 3, "label": "noun", "split": "train", "template_family": "broad_noun_05"}
+{"id": "houses-noun-06", "sentence": "She likes those houses.", "target": "houses", "target_index": 3, "label": "noun", "split": "train", "template_family": "broad_noun_06"}
+{"id": "horses-noun-01", "sentence": "They watch the horses.", "target": "horses", "target_index": 3, "label": "noun", "split": "train", "template_family": "broad_noun_01"}
+{"id": "horses-noun-02", "sentence": "The horses are outside.", "target": "horses", "target_index": 1, "label": "noun", "split": "train", "template_family": "broad_noun_02"}
+{"id": "horses-noun-03", "sentence": "We see the horses.", "target": "horses", "target_index": 3, "label": "noun", "split": "train", "template_family": "broad_noun_03"}
+{"id": "horses-noun-04", "sentence": "You notice these horses.", "target": "horses", "target_index": 3, "label": "noun", "split": "train", "template_family": "broad_noun_04"}
+{"id": "horses-noun-05", "sentence": "I like the horses.", "target": "horses", "target_index": 3, "label": "noun", "split": "train", "template_family": "broad_noun_05"}
+{"id": "horses-noun-06", "sentence": "She likes those horses.", "target": "horses", "target_index": 3, "label": "noun", "split": "train", "template_family": "broad_noun_06"}
+{"id": "lamps-noun-01", "sentence": "They watch the lamps.", "target": "lamps", "target_index": 3, "label": "noun", "split": "train", "template_family": "broad_noun_01"}
+{"id": "lamps-noun-02", "sentence": "The lamps are outside.", "target": "lamps", "target_index": 1, "label": "noun", "split": "train", "template_family": "broad_noun_02"}
+{"id": "lamps-noun-03", "sentence": "We see the lamps.", "target": "lamps", "target_index": 3, "label": "noun", "split": "train", "template_family": "broad_noun_03"}
+{"id": "lamps-noun-04", "sentence": "You notice these lamps.", "target": "lamps", "target_index": 3, "label": "noun", "split": "train", "template_family": "broad_noun_04"}
+{"id": "lamps-noun-05", "sentence": "I like the lamps.", "target": "lamps", "target_index": 3, "label": "noun", "split": "train", "template_family": "broad_noun_05"}
+{"id": "lamps-noun-06", "sentence": "She likes those lamps.", "target": "lamps", "target_index": 3, "label": "noun", "split": "train", "template_family": "broad_noun_06"}
+{"id": "chairs-noun-01", "sentence": "They watch the chairs.", "target": "chairs", "target_index": 3, "label": "noun", "split": "train", "template_family": "broad_noun_01"}
+{"id": "chairs-noun-02", "sentence": "The chairs are outside.", "target": "chairs", "target_index": 1, "label": "noun", "split": "train", "template_family": "broad_noun_02"}
+{"id": "chairs-noun-03", "sentence": "We see the chairs.", "target": "chairs", "target_index": 3, "label": "noun", "split": "train", "template_family": "broad_noun_03"}
+{"id": "chairs-noun-04", "sentence": "You notice these chairs.", "target": "chairs", "target_index": 3, "label": "noun", "split": "train", "template_family": "broad_noun_04"}
+{"id": "chairs-noun-05", "sentence": "I like the chairs.", "target": "chairs", "target_index": 3, "label": "noun", "split": "train", "template_family": "broad_noun_05"}
+{"id": "chairs-noun-06", "sentence": "She likes those chairs.", "target": "chairs", "target_index": 3, "label": "noun", "split": "train", "template_family": "broad_noun_06"}
+{"id": "they-other-01", "sentence": "They watch the birds.", "target": "they", "target_index": 0, "label": "other", "split": "train", "template_family": "other_they"}
+{"id": "they-other-02", "sentence": "They watch the dogs.", "target": "they", "target_index": 0, "label": "other", "split": "train", "template_family": "other_they"}
+{"id": "they-other-03", "sentence": "They watch the cats.", "target": "they", "target_index": 0, "label": "other", "split": "train", "template_family": "other_they"}
+{"id": "they-other-04", "sentence": "They watch the horses.", "target": "they", "target_index": 0, "label": "other", "split": "train", "template_family": "other_they"}
+{"id": "they-other-05", "sentence": "They watch the students.", "target": "they", "target_index": 0, "label": "other", "split": "train", "template_family": "other_they"}
+{"id": "they-other-06", "sentence": "They watch the friends.", "target": "they", "target_index": 0, "label": "other", "split": "train", "template_family": "other_they"}
+{"id": "we-other-01", "sentence": "We watch the birds.", "target": "we", "target_index": 0, "label": "other", "split": "train", "template_family": "other_we"}
+{"id": "we-other-02", "sentence": "We watch the dogs.", "target": "we", "target_index": 0, "label": "other", "split": "train", "template_family": "other_we"}
+{"id": "we-other-03", "sentence": "We watch the cats.", "target": "we", "target_index": 0, "label": "other", "split": "train", "template_family": "other_we"}
+{"id": "we-other-04", "sentence": "We watch the horses.", "target": "we", "target_index": 0, "label": "other", "split": "train", "template_family": "other_we"}
+{"id": "we-other-05", "sentence": "We watch the students.", "target": "we", "target_index": 0, "label": "other", "split": "train", "template_family": "other_we"}
+{"id": "we-other-06", "sentence": "We watch the friends.", "target": "we", "target_index": 0, "label": "other", "split": "train", "template_family": "other_we"}
+{"id": "you-other-01", "sentence": "You watch the birds.", "target": "you", "target_index": 0, "label": "other", "split": "train", "template_family": "other_you"}
+{"id": "you-other-02", "sentence": "You watch the dogs.", "target": "you", "target_index": 0, "label": "other", "split": "train", "template_family": "other_you"}
+{"id": "you-other-03", "sentence": "You watch the cats.", "target": "you", "target_index": 0, "label": "other", "split": "train", "template_family": "other_you"}
+{"id": "you-other-04", "sentence": "You watch the horses.", "target": "you", "target_index": 0, "label": "other", "split": "train", "template_family": "other_you"}
+{"id": "you-other-05", "sentence": "You watch the students.", "target": "you", "target_index": 0, "label": "other", "split": "train", "template_family": "other_you"}
+{"id": "you-other-06", "sentence": "You watch the friends.", "target": "you", "target_index": 0, "label": "other", "split": "train", "template_family": "other_you"}
+{"id": "i-other-01", "sentence": "I watch the birds.", "target": "i", "target_index": 0, "label": "other", "split": "train", "template_family": "other_i"}
+{"id": "i-other-02", "sentence": "I watch the dogs.", "target": "i", "target_index": 0, "label": "other", "split": "train", "template_family": "other_i"}
+{"id": "i-other-03", "sentence": "I watch the cats.", "target": "i", "target_index": 0, "label": "other", "split": "train", "template_family": "other_i"}
+{"id": "i-other-04", "sentence": "I watch the horses.", "target": "i", "target_index": 0, "label": "other", "split": "train", "template_family": "other_i"}
+{"id": "i-other-05", "sentence": "I watch the students.", "target": "i", "target_index": 0, "label": "other", "split": "train", "template_family": "other_i"}
+{"id": "i-other-06", "sentence": "I watch the friends.", "target": "i", "target_index": 0, "label": "other", "split": "train", "template_family": "other_i"}
+{"id": "the-other-01", "sentence": "They watch the birds.", "target": "the", "target_index": 2, "label": "other", "split": "train", "template_family": "other_the"}
+{"id": "the-other-02", "sentence": "They watch the dogs.", "target": "the", "target_index": 2, "label": "other", "split": "train", "template_family": "other_the"}
+{"id": "the-other-03", "sentence": "They watch the cats.", "target": "the", "target_index": 2, "label": "other", "split": "train", "template_family": "other_the"}
+{"id": "the-other-04", "sentence": "They watch the horses.", "target": "the", "target_index": 2, "label": "other", "split": "train", "template_family": "other_the"}
+{"id": "the-other-05", "sentence": "They watch the students.", "target": "the", "target_index": 2, "label": "other", "split": "train", "template_family": "other_the"}
+{"id": "the-other-06", "sentence": "They watch the friends.", "target": "the", "target_index": 2, "label": "other", "split": "train", "template_family": "other_the"}
+{"id": "a-other-01", "sentence": "They see a bird.", "target": "a", "target_index": 2, "label": "other", "split": "train", "template_family": "other_a"}
+{"id": "a-other-02", "sentence": "They see a dog.", "target": "a", "target_index": 2, "label": "other", "split": "train", "template_family": "other_a"}
+{"id": "a-other-03", "sentence": "They see a cat.", "target": "a", "target_index": 2, "label": "other", "split": "train", "template_family": "other_a"}
+{"id": "a-other-04", "sentence": "They see a horse.", "target": "a", "target_index": 2, "label": "other", "split": "train", "template_family": "other_a"}
+{"id": "a-other-05", "sentence": "They see a student.", "target": "a", "target_index": 2, "label": "other", "split": "train", "template_family": "other_a"}
+{"id": "a-other-06", "sentence": "They see a friend.", "target": "a", "target_index": 2, "label": "other", "split": "train", "template_family": "other_a"}
+{"id": "this-other-01", "sentence": "They see this bird.", "target": "this", "target_index": 2, "label": "other", "split": "train", "template_family": "other_this"}
+{"id": "this-other-02", "sentence": "They see this dog.", "target": "this", "target_index": 2, "label": "other", "split": "train", "template_family": "other_this"}
+{"id": "this-other-03", "sentence": "They see this cat.", "target": "this", "target_index": 2, "label": "other", "split": "train", "template_family": "other_this"}
+{"id": "this-other-04", "sentence": "They see this horse.", "target": "this", "target_index": 2, "label": "other", "split": "train", "template_family": "other_this"}
+{"id": "this-other-05", "sentence": "They see this student.", "target": "this", "target_index": 2, "label": "other", "split": "train", "template_family": "other_this"}
+{"id": "this-other-06", "sentence": "They see this friend.", "target": "this", "target_index": 2, "label": "other", "split": "train", "template_family": "other_this"}
+{"id": "my-other-01", "sentence": "They see my bird.", "target": "my", "target_index": 2, "label": "other", "split": "train", "template_family": "other_my"}
+{"id": "my-other-02", "sentence": "They see my dog.", "target": "my", "target_index": 2, "label": "other", "split": "train", "template_family": "other_my"}
+{"id": "my-other-03", "sentence": "They see my cat.", "target": "my", "target_index": 2, "label": "other", "split": "train", "template_family": "other_my"}
+{"id": "my-other-04", "sentence": "They see my horse.", "target": "my", "target_index": 2, "label": "other", "split": "train", "template_family": "other_my"}
+{"id": "my-other-05", "sentence": "They see my student.", "target": "my", "target_index": 2, "label": "other", "split": "train", "template_family": "other_my"}
+{"id": "my-other-06", "sentence": "They see my friend.", "target": "my", "target_index": 2, "label": "other", "split": "train", "template_family": "other_my"}
+{"id": "your-other-01", "sentence": "They see your bird.", "target": "your", "target_index": 2, "label": "other", "split": "train", "template_family": "other_your"}
+{"id": "your-other-02", "sentence": "They see your dog.", "target": "your", "target_index": 2, "label": "other", "split": "train", "template_family": "other_your"}
+{"id": "your-other-03", "sentence": "They see your cat.", "target": "your", "target_index": 2, "label": "other", "split": "train", "template_family": "other_your"}
+{"id": "your-other-04", "sentence": "They see your horse.", "target": "your", "target_index": 2, "label": "other", "split": "train", "template_family": "other_your"}
+{"id": "your-other-05", "sentence": "They see your student.", "target": "your", "target_index": 2, "label": "other", "split": "train", "template_family": "other_your"}
+{"id": "your-other-06", "sentence": "They see your friend.", "target": "your", "target_index": 2, "label": "other", "split": "train", "template_family": "other_your"}
+{"id": "to-other-01", "sentence": "They walk to the park.", "target": "to", "target_index": 2, "label": "other", "split": "train", "template_family": "other_to"}
+{"id": "to-other-02", "sentence": "They walk to the school.", "target": "to", "target_index": 2, "label": "other", "split": "train", "template_family": "other_to"}
+{"id": "to-other-03", "sentence": "They walk to the lake.", "target": "to", "target_index": 2, "label": "other", "split": "train", "template_family": "other_to"}
+{"id": "to-other-04", "sentence": "They walk to the shop.", "target": "to", "target_index": 2, "label": "other", "split": "train", "template_family": "other_to"}
+{"id": "to-other-05", "sentence": "They walk to the house.", "target": "to", "target_index": 2, "label": "other", "split": "train", "template_family": "other_to"}
+{"id": "to-other-06", "sentence": "They walk to the garden.", "target": "to", "target_index": 2, "label": "other", "split": "train", "template_family": "other_to"}
+{"id": "with-other-01", "sentence": "They play with the bird.", "target": "with", "target_index": 2, "label": "other", "split": "train", "template_family": "other_with"}
+{"id": "with-other-02", "sentence": "They play with the dog.", "target": "with", "target_index": 2, "label": "other", "split": "train", "template_family": "other_with"}
+{"id": "with-other-03", "sentence": "They play with the cat.", "target": "with", "target_index": 2, "label": "other", "split": "train", "template_family": "other_with"}
+{"id": "with-other-04", "sentence": "They play with the horse.", "target": "with", "target_index": 2, "label": "other", "split": "train", "template_family": "other_with"}
+{"id": "with-other-05", "sentence": "They play with the student.", "target": "with", "target_index": 2, "label": "other", "split": "train", "template_family": "other_with"}
+{"id": "with-other-06", "sentence": "They play with the friend.", "target": "with", "target_index": 2, "label": "other", "split": "train", "template_family": "other_with"}
+{"id": "and-other-01", "sentence": "They watch the birds and smile.", "target": "and", "target_index": 4, "label": "other", "split": "train", "template_family": "other_and"}
+{"id": "and-other-02", "sentence": "They watch the dogs and smile.", "target": "and", "target_index": 4, "label": "other", "split": "train", "template_family": "other_and"}
+{"id": "and-other-03", "sentence": "They watch the cats and smile.", "target": "and", "target_index": 4, "label": "other", "split": "train", "template_family": "other_and"}
+{"id": "and-other-04", "sentence": "They watch the horses and smile.", "target": "and", "target_index": 4, "label": "other", "split": "train", "template_family": "other_and"}
+{"id": "and-other-05", "sentence": "They watch the students and smile.", "target": "and", "target_index": 4, "label": "other", "split": "train", "template_family": "other_and"}
+{"id": "and-other-06", "sentence": "They watch the friends and smile.", "target": "and", "target_index": 4, "label": "other", "split": "train", "template_family": "other_and"}
+{"id": "quickly-other-01", "sentence": "They quickly notice the birds.", "target": "quickly", "target_index": 1, "label": "other", "split": "train", "template_family": "other_quickly"}
+{"id": "quickly-other-02", "sentence": "They quickly notice the dogs.", "target": "quickly", "target_index": 1, "label": "other", "split": "train", "template_family": "other_quickly"}
+{"id": "quickly-other-03", "sentence": "They quickly notice the cats.", "target": "quickly", "target_index": 1, "label": "other", "split": "train", "template_family": "other_quickly"}
+{"id": "quickly-other-04", "sentence": "They quickly notice the horses.", "target": "quickly", "target_index": 1, "label": "other", "split": "train", "template_family": "other_quickly"}
+{"id": "quickly-other-05", "sentence": "They quickly notice the students.", "target": "quickly", "target_index": 1, "label": "other", "split": "train", "template_family": "other_quickly"}
+{"id": "quickly-other-06", "sentence": "They quickly notice the friends.", "target": "quickly", "target_index": 1, "label": "other", "split": "train", "template_family": "other_quickly"}
+{"id": "very-other-01", "sentence": "The birds are very quiet.", "target": "very", "target_index": 3, "label": "other", "split": "train", "template_family": "other_very"}
+{"id": "very-other-02", "sentence": "The dogs are very quiet.", "target": "very", "target_index": 3, "label": "other", "split": "train", "template_family": "other_very"}
+{"id": "very-other-03", "sentence": "The cats are very quiet.", "target": "very", "target_index": 3, "label": "other", "split": "train", "template_family": "other_very"}
+{"id": "very-other-04", "sentence": "The horses are very quiet.", "target": "very", "target_index": 3, "label": "other", "split": "train", "template_family": "other_very"}
+{"id": "very-other-05", "sentence": "The students are very quiet.", "target": "very", "target_index": 3, "label": "other", "split": "train", "template_family": "other_very"}
+{"id": "very-other-06", "sentence": "The friends are very quiet.", "target": "very", "target_index": 3, "label": "other", "split": "train", "template_family": "other_very"}
+{"id": "happy-other-01", "sentence": "The happy birds play outside.", "target": "happy", "target_index": 1, "label": "other", "split": "train", "template_family": "other_happy"}
+{"id": "happy-other-02", "sentence": "The happy dogs play outside.", "target": "happy", "target_index": 1, "label": "other", "split": "train", "template_family": "other_happy"}
+{"id": "happy-other-03", "sentence": "The happy cats play outside.", "target": "happy", "target_index": 1, "label": "other", "split": "train", "template_family": "other_happy"}
+{"id": "happy-other-04", "sentence": "The happy horses play outside.", "target": "happy", "target_index": 1, "label": "other", "split": "train", "template_family": "other_happy"}
+{"id": "happy-other-05", "sentence": "The happy students play outside.", "target": "happy", "target_index": 1, "label": "other", "split": "train", "template_family": "other_happy"}
+{"id": "happy-other-06", "sentence": "The happy friends play outside.", "target": "happy", "target_index": 1, "label": "other", "split": "train", "template_family": "other_happy"}
+{"id": "not-other-01", "sentence": "They do not watch the birds.", "target": "not", "target_index": 2, "label": "other", "split": "train", "template_family": "other_not"}
+{"id": "not-other-02", "sentence": "They do not watch the dogs.", "target": "not", "target_index": 2, "label": "other", "split": "train", "template_family": "other_not"}
+{"id": "not-other-03", "sentence": "They do not watch the cats.", "target": "not", "target_index": 2, "label": "other", "split": "train", "template_family": "other_not"}
+{"id": "not-other-04", "sentence": "They do not watch the horses.", "target": "not", "target_index": 2, "label": "other", "split": "train", "template_family": "other_not"}
+{"id": "not-other-05", "sentence": "They do not watch the students.", "target": "not", "target_index": 2, "label": "other", "split": "train", "template_family": "other_not"}
+{"id": "not-other-06", "sentence": "They do not watch the friends.", "target": "not", "target_index": 2, "label": "other", "split": "train", "template_family": "other_not"}
+{"id": "please-other-01", "sentence": "Please watch the birds.", "target": "please", "target_index": 0, "label": "other", "split": "train", "template_family": "other_please"}
+{"id": "please-other-02", "sentence": "Please watch the dogs.", "target": "please", "target_index": 0, "label": "other", "split": "train", "template_family": "other_please"}
+{"id": "please-other-03", "sentence": "Please watch the cats.", "target": "please", "target_index": 0, "label": "other", "split": "train", "template_family": "other_please"}
+{"id": "please-other-04", "sentence": "Please watch the horses.", "target": "please", "target_index": 0, "label": "other", "split": "train", "template_family": "other_please"}
+{"id": "please-other-05", "sentence": "Please watch the students.", "target": "please", "target_index": 0, "label": "other", "split": "train", "template_family": "other_please"}
+{"id": "please-other-06", "sentence": "Please watch the friends.", "target": "please", "target_index": 0, "label": "other", "split": "train", "template_family": "other_please"}

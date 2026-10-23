@@ -1,11 +1,11 @@
 """Train on train, select by validation loss, then evaluate test once."""
 import argparse
-from collections import defaultdict
+from collections import Counter, defaultdict
 import json
 from pathlib import Path
 import time
 import numpy as np
-from model import Adam, ContextModel, UNK, PAD, build_vocab, encode, sigmoid
+from model import Adam, ContextModel, UNK, PAD, LABELS, build_vocab, cross_entropy, encode, softmax
 
 
 def read_rows(path):
@@ -14,16 +14,16 @@ def read_rows(path):
 
 def evaluate(model, rows):
     # Measure a fixed model: this function never updates its weights. Each row
-    # supplies a sentence, a target position, and the correct noun/verb label.
+    # supplies a sentence, a target position, and the correct noun/verb/other label.
     windows, labels = encode(rows, model.vocab)
-    # Forward pass: word embeddings -> hidden layer -> one score (a logit).
-    # Sigmoid turns that score into P(verb). Labels are noun=0 and verb=1.
+    # Forward pass: word embeddings -> hidden layer -> three scores (logits).
+    # Softmax turns them into probabilities, ordered noun, verb, other.
     logits = model.forward(windows)[0]
-    probabilities = sigmoid(logits)
-    predicted = probabilities >= 0.5
+    probabilities = softmax(logits)
+    predicted = probabilities.argmax(axis=1)
     correct = predicted == labels
-    confusion = np.zeros((2, 2), dtype=int)
-    # Rows are actual labels; columns are predictions. Both use [noun, verb].
+    confusion = np.zeros((len(LABELS), len(LABELS)), dtype=int)
+    # Rows are actual labels; columns are predictions. Both use LABELS.
     np.add.at(confusion, (labels.astype(int), predicted.astype(int)), 1)
     context_mask = np.ones_like(windows, dtype=bool)
     context_mask[:, 2] = False
@@ -43,16 +43,15 @@ def evaluate(model, rows):
             for key, indices in sorted(grouped.items())}
     return {
         'count': len(rows),
-        # Binary cross-entropy penalizes confident wrong answers especially
-        # strongly. This form computes it without numerical overflow.
-        'loss': float(np.mean(np.logaddexp(0, logits) - labels * logits)),
+        # Multiclass cross-entropy penalizes confident wrong answers.
+        'loss': cross_entropy(logits, labels),
         'accuracy': float(correct.mean()),
-        'confusion_rows_actual_columns_predicted_noun_verb': confusion.tolist(),
+        'confusion_rows_actual_columns_predicted_noun_verb_other': confusion.tolist(),
         'context_oov_rate': float(oov.sum() / max(1, context_mask.sum())),
         'examples_with_oov_context': int(oov.any(axis=1).sum()),
         **groups,
-    }, [dict(row, verb_probability=float(probabilities[i]),
-             prediction='verb' if predicted[i] else 'noun', correct=bool(correct[i]),
+    }, [dict(row, probabilities=dict(zip(LABELS, probabilities[i].tolist())),
+             prediction=LABELS[predicted[i]], correct=bool(correct[i]),
              window_ids=windows[i].tolist()) for i, row in enumerate(rows)]
 
 
@@ -68,10 +67,11 @@ def train(data_dir, output_dir, seed=7, max_epochs=300, patience=30,
     # Start from scratch, with reproducible random embeddings and layer weights
     # (biases start at zero). Both embeddings and layer weights will learn.
     model = ContextModel(vocab, seed=seed)
+    model.targets = frozenset(row['target'] for row in training)
     # Each input keeps five ordered positions: two left, target, two right.
     # encode() uses word IDs, PAD at sentence edges, and UNK for unseen words.
     # The model looks up 8 numbers per ID and concatenates them in this order,
-    # then uses 16 tanh hidden units to produce its noun/verb prediction.
+    # then uses 16 tanh hidden units to produce its noun/verb/other prediction.
     windows, labels = encode(training, vocab)
     optimizer = Adam(model.params, learning_rate)
     rng = np.random.default_rng(seed + 1)
@@ -85,15 +85,15 @@ def train(data_dir, output_dir, seed=7, max_epochs=300, patience=30,
     # gradients by backpropagation, then subtract learning_rate * gradient.
     # This is one illustrative SGD step; the full run below uses Adam instead.
     one_x, one_y = windows[:1], labels[:1]
-    before = float(model.predict(one_x)[0])
+    before = dict(zip(LABELS, model.predict(one_x)[0].tolist()))
     loss, gradients = model.loss_and_gradients(one_x, one_y)
     original = {key: value.copy() for key, value in model.params.items()}
     for key in model.params:
         model.params[key] -= 0.1 * gradients[key]
-    after = float(model.predict(one_x)[0])
+    after = dict(zip(LABELS, model.predict(one_x)[0].tolist()))
     trace = {'example': training[0], 'window_ids': one_x[0].tolist(),
-             'verb_probability_before': before, 'loss_before': loss,
-             'verb_probability_after': after,
+             'probabilities_before': before, 'loss_before': loss,
+             'probabilities_after': after,
              'loss_after': model.loss_and_gradients(one_x, one_y)[0],
              'optimizer': 'one illustrative SGD step; full run uses Adam',
              'learning_rate': 0.1,
@@ -112,7 +112,7 @@ def train(data_dir, output_dir, seed=7, max_epochs=300, patience=30,
         nonlocal callback_seconds
         if callback is not None:
             event = dict(history[-1], type='epoch',
-                         validation_confusion=metrics['confusion_rows_actual_columns_predicted_noun_verb'],
+                         validation_confusion=metrics['confusion_rows_actual_columns_predicted_noun_verb_other'],
                          learning_rate=learning_rate, best_epoch=best_epoch,
                          compute_seconds=time.perf_counter() - started - callback_seconds)
             callback_started = time.perf_counter()
@@ -171,9 +171,17 @@ def train(data_dir, output_dir, seed=7, max_epochs=300, patience=30,
                                 'learning_rate': learning_rate, 'batch_size': batch_size,
                                 'context_dropout': context_dropout, 'max_epochs': max_epochs,
                                 'patience': patience, 'selection': 'minimum validation loss'},
-              'baselines': {'constant_noun_accuracy': sum(r['label'] == 'noun' for r in test) / len(test),
-                            'target_only_expected_accuracy': 0.5,
-                            'note': 'Every target has balanced labels in each split; target identity alone cannot distinguish labels.'}}
+              'labels': list(LABELS),
+              'baselines': {
+                  'constant_label_accuracy': {
+                      label: sum(row['label'] == label for row in test) / len(test)
+                      for label in LABELS},
+                  'target_only_expected_accuracy':
+                      sum(max(counts.values()) for counts in (
+                          Counter(row['label'] for row in test if row['target'] == target)
+                          for target in {row['target'] for row in test})) / len(test),
+                  'note': 'Original ambiguous targets have balanced noun/verb labels. Additional noun-only and other-only targets can be distinguished by identity.'}}
+
     predictions = []
     for name, rows in [('train', training), ('validation', validation), ('test', test)]:
         report[name], examples = evaluate(model, rows)
