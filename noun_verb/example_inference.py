@@ -1,5 +1,8 @@
 """Example of importing inference and loading weights from another script."""
-from inference import Predictor
+if __package__:
+    from .inference import Predictor
+else:
+    from inference import Predictor
 
 
 def main():

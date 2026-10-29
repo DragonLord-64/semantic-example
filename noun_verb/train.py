@@ -5,7 +5,10 @@ import json
 from pathlib import Path
 import time
 import numpy as np
-from model import Adam, ContextModel, UNK, PAD, LABELS, build_vocab, cross_entropy, encode, softmax
+if __package__:
+    from .model import Adam, ContextModel, UNK, PAD, LABELS, build_vocab, cross_entropy, encode, softmax
+else:
+    from model import Adam, ContextModel, UNK, PAD, LABELS, build_vocab, cross_entropy, encode, softmax
 
 
 def read_rows(path):

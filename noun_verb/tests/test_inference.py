@@ -5,9 +5,9 @@ import unittest
 
 import numpy as np
 
-from inference import Predictor
-from model import ContextModel, LABELS, PAD, UNK
-from predict import classify, print_prediction
+from noun_verb.inference import Predictor
+from noun_verb.model import ContextModel, LABELS, PAD, UNK
+from noun_verb.predict import classify, print_prediction
 
 
 class FixedModel:

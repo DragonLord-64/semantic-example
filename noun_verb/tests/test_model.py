@@ -5,7 +5,7 @@ import unittest
 
 import numpy as np
 
-from model import ContextModel, LABELS, PAD, UNK, encode
+from noun_verb.model import ContextModel, LABELS, PAD, UNK, encode
 
 
 class ThreeLabelModelTests(unittest.TestCase):

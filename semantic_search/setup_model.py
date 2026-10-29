@@ -2,7 +2,10 @@
 
 from fastembed import TextEmbedding
 
-from search import CACHE_DIR, MODEL_NAME
+if __package__:
+    from .search import CACHE_DIR, MODEL_NAME
+else:
+    from search import CACHE_DIR, MODEL_NAME
 
 
 if __name__ == "__main__":

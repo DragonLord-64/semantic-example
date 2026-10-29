@@ -2,7 +2,10 @@
 from pathlib import Path
 from tempfile import TemporaryDirectory
 import numpy as np
-from model import ContextModel, PAD, UNK, softmax
+if __package__:
+    from .model import ContextModel, PAD, UNK, softmax
+else:
+    from model import ContextModel, PAD, UNK, softmax
 
 
 def main():

@@ -3,7 +3,10 @@ import argparse
 from pathlib import Path
 import sys
 
-from model import ContextModel, LABELS, PAD, UNK, encode, tokenize
+if __package__:
+    from .model import ContextModel, LABELS, PAD, UNK, encode, tokenize
+else:
+    from model import ContextModel, LABELS, PAD, UNK, encode, tokenize
 
 HERE = Path(__file__).resolve().parent
 CHECKPOINT = HERE / 'results' / 'best_model.npz'

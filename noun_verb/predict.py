@@ -3,8 +3,14 @@ from pathlib import Path
 import sys
 
 try:
-    from model import ContextModel, tokenize
-    from inference import Predictor
+    if __package__:
+        from .model import ContextModel, tokenize
+    else:
+        from model import ContextModel, tokenize
+    if __package__:
+        from .inference import Predictor
+    else:
+        from inference import Predictor
 except ModuleNotFoundError as exc:
     if exc.name != 'numpy':
         raise

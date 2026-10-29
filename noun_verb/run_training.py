@@ -83,7 +83,10 @@ class Dashboard:
 
 def main():
     try:
-        from train import train
+        if __package__:
+            from .train import train
+        else:
+            from train import train
     except ModuleNotFoundError as exc:
         if exc.name == 'numpy':
             raise SystemExit('NumPy is required. See docs/CLI.md for setup.') from None

@@ -3,8 +3,8 @@ import json
 from pathlib import Path
 import unittest
 
-from generate_dataset import audit, build
-from model import LABELS, tokenize
+from noun_verb.generate_dataset import audit, build
+from noun_verb.model import LABELS, tokenize
 
 
 ROOT = Path(__file__).resolve().parents[1]
