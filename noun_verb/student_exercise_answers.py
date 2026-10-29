@@ -1,7 +1,13 @@
-"""Reference solution: python student_exercise_answers.py. Uses saved weights."""
+"""Reference solution: python noun_verb/student_exercise_answers.py. Uses saved weights."""
+from pathlib import Path
+import sys
+
+if not __package__:
+    sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+
 from inference import Predictor
 from model import tokenize
-from student_exercise import SENTENCE
+from noun_verb.student_exercise import SENTENCE
 
 
 def find_nouns_and_verbs(sentence, predictor):

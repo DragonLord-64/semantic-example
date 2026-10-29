@@ -3,3 +3,4 @@ __pycache__/
 *.pyc
 binary_original/
 interrupted_three_label/
+semantic_search/.model_cache/

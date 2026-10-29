@@ -1,8 +1,14 @@
 # Noun, verb, or other: a tiny learning demo
 
+For a pretrained model that searches a text file by meaning, see the separate [semantic search example](semantic_search/README.md). Edit the file path and query in its Python script, then run it directly in VS Code.
+
 Train a small neural network from scratch to classify one selected word as noun, verb, or other using its context. Requires Python 3.10+ and NumPy.
 
 ## Setup
+
+With Docker and VS Code's Dev Containers extension installed, choose **Dev Containers: Reopen in Container**. Dependencies install automatically; then run the commands below under “Train and predict”. [Dev Containers setup](https://code.visualstudio.com/docs/devcontainers/containers).
+
+For local setup:
 
 Run from this folder:
 
@@ -29,9 +35,9 @@ python inference.py watch "They watch the birds."
 
 ## Explore
 
-- Start with [student-example](student_example.py): `python student_example.py` shows how to load the module and predict a word's label in different sentences.
-- Complete [student_exercise.py](student_exercise.py): create a function that finds the nouns and verbs in “They watch the birds.”
-- Run the [answer key](student_exercise_answers.py): `python student_exercise_answers.py`.
+- Start with [student-example](noun_verb/student_example.py): `python noun_verb/student_example.py` shows how to load the module and predict a word's label in different sentences.
+- Complete [student_exercise.py](noun_verb/student_exercise.py): create a function that finds the nouns and verbs in “They watch the birds.”
+- Run the [answer key](noun_verb/student_exercise_answers.py): `python noun_verb/student_exercise_answers.py`.
 - Run `python example_inference.py` for the Python API.
 - Run `python check_model.py` to verify the model calculations.
 - Run `python -m unittest discover -s tests -v` for the automated tests.

@@ -44,6 +44,6 @@ Reuse the predictor across sentences. Missing or ambiguous words and invalid ind
 
 Each result includes `noun_probability`, `verb_probability`, and `other_probability`; they sum to one. The highest probability determines `prediction`. `other` covers roles such as pronouns, determiners, and prepositions.
 
-Run [student-example](../student_example.py) with `python student_example.py` for a guided usage example. Then complete [student_exercise.py](../student_exercise.py): find the nouns and verbs in a whole sentence. The [reference solution](../student_exercise_answers.py) tokenizes it, calls `predictor.predict(sentence, target_index)` for each word, and collects noun and verb predictions. Keeping the full sentence preserves context; using token indices handles repeated words.
+Run [student-example](../noun_verb/student_example.py) with `python noun_verb/student_example.py` for a guided usage example. Then complete [student_exercise.py](../noun_verb/student_exercise.py): find the nouns and verbs in a whole sentence. The [reference solution](../noun_verb/student_exercise_answers.py) tokenizes it, calls `predictor.predict(sentence, target_index)` for each word, and collects noun and verb predictions. Keeping the full sentence preserves context; using token indices handles repeated words.
 
 Unknown words share one vector; probabilities do not guarantee correctness.

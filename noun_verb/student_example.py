@@ -1,6 +1,6 @@
 """student-example: how to use the prediction module.
 
-Run: python student_example.py
+Run: python noun_verb/student_example.py
 The saved model is loaded once and reused for every sentence.
 
 predictor.predict_word(sentence, TARGET) returns a dictionary containing
@@ -8,6 +8,12 @@ predictor.predict_word(sentence, TARGET) returns a dictionary containing
 For repeated words, use predictor.predict(sentence, target_index) instead;
 target_index is a zero-based position in model.tokenize(sentence).
 """
+from pathlib import Path
+import sys
+
+if not __package__:
+    sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+
 from inference import Predictor
 
 TARGET = "watch"
@@ -28,6 +34,8 @@ def main():
     for sentence in SENTENCES:
         result = predictor.predict_word(sentence, TARGET)
         print(sentence, result["prediction"], result["verb_probability"])
+        # print(sentence, result["prediction"], result["noun_probability"])
+        # print(sentence, result["prediction"], result["other_probability"])
 
     # Compare the predictions with your own labels, then add two sentences.
     # What changes between sentences if TARGET stays the same?

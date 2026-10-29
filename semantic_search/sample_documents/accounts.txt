@@ -1,0 +1,5 @@
+Use the account recovery page to reset your login credentials.
+If you forget your password, request a reset link by email.
+Contact the support team when you cannot sign in to your account.
+A recovery code can help you regain access to your profile.
+Choose a new secret phrase after verifying your identity.

@@ -1,7 +1,7 @@
 """Check the reference solution's word-by-word use of the Predictor API."""
 import unittest
 
-from student_exercise_answers import find_nouns_and_verbs
+from noun_verb.student_exercise_answers import find_nouns_and_verbs
 
 
 class RecordingPredictor:
