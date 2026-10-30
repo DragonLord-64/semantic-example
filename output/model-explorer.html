@@ -1,0 +1,83 @@
+<div id="context-model-explorer">
+  <style>
+    #context-model-explorer { color:var(--foreground); }
+    #context-model-explorer .stages { display:flex; flex-direction:column; align-items:center; gap:8px; padding:12px 0; }
+    #context-model-explorer .stage { width:100%; text-align:center; display:flex; flex-direction:column; align-items:center; gap:10px; }
+    #context-model-explorer .words { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:8px; width:100%; max-width:520px; }
+    #context-model-explorer .word { display:flex; flex-direction:column; align-items:center; gap:8px; }
+    #context-model-explorer .word strong { font-weight:500; }
+    #context-model-explorer .target { color:var(--foreground); background:color-mix(in srgb,var(--viz-series-1) 16%,transparent); }
+    #context-model-explorer .dots { display:grid; gap:5px; justify-content:center; }
+    #context-model-explorer .embedding { grid-template-columns:repeat(2,10px); }
+    #context-model-explorer .flat { grid-template-columns:repeat(10,10px); }
+    #context-model-explorer .hidden { grid-template-columns:repeat(8,14px); }
+    #context-model-explorer .dot { width:10px; height:10px; border-radius:50%; background:var(--muted-foreground); opacity:.4; }
+    #context-model-explorer .hidden .dot { width:14px; height:14px; }
+    #context-model-explorer .selected .dot { background:var(--viz-series-1); opacity:1; }
+    #context-model-explorer .arrow { color:var(--muted-foreground); }
+    #context-model-explorer .single { width:20px; height:20px; }
+    #context-model-explorer .detail { min-height:3em; text-align:center; }
+  </style>
+  <h3>Inside the noun-or-verb model</h3>
+  <div class="text-small">They <strong>watch</strong> the birds.</div>
+  <div class="stages" aria-label="Five word positions become forty inputs, sixteen hidden neurons, and one output.">
+    <div class="stage selected" data-stage="embedding">
+      <button class="btn" type="button" aria-pressed="true" data-layer="embedding">5 word positions → 5 × 8 learned numbers</button>
+      <div class="words">
+        <div class="word"><span>PAD</span><div class="dots embedding" aria-hidden="true"></div></div>
+        <div class="word"><span>they</span><div class="dots embedding" aria-hidden="true"></div></div>
+        <div class="word target"><strong>watch</strong><div class="dots embedding" aria-hidden="true"></div></div>
+        <div class="word"><span>the</span><div class="dots embedding" aria-hidden="true"></div></div>
+        <div class="word"><span>birds</span><div class="dots embedding" aria-hidden="true"></div></div>
+      </div>
+    </div>
+    <div class="arrow" aria-hidden="true">↓</div>
+    <div class="stage" data-stage="flat">
+      <button class="btn" type="button" aria-pressed="false" data-layer="flat">Join in order → 40 inputs</button>
+      <div class="dots flat" aria-hidden="true"></div>
+    </div>
+    <div class="arrow" aria-hidden="true">↓</div>
+    <div class="stage" data-stage="hidden">
+      <button class="btn" type="button" aria-pressed="false" data-layer="hidden">Weighted connections + tanh → 16 neurons</button>
+      <div class="dots hidden" aria-hidden="true"></div>
+    </div>
+    <div class="arrow" aria-hidden="true">↓</div>
+    <div class="stage" data-stage="output">
+      <button class="btn" type="button" aria-pressed="false" data-layer="output">Weighted connections → 1 score → sigmoid</button>
+      <div class="dot single" aria-hidden="true"></div>
+      <span>P(verb) ≥ 50%: verb · otherwise: noun</span>
+    </div>
+  </div>
+  <div class="detail text-small" aria-live="polite"></div>
+  <script>
+    (() => {
+      const root = document.getElementById('context-model-explorer');
+      const descriptions = {
+        embedding:'model.py:42 · Each vocabulary word has a learned vector of 8 numbers; PAD fills the missing left position.',
+        flat:'model.py:51 · The five vectors are joined into 40 numbers, preserving word order.',
+        hidden:'model.py:52 · Each of the 16 neurons combines all 40 inputs, adds a bias, and applies tanh.',
+        output:'model.py:53,74 · The 16 hidden values produce one score; sigmoid maps it to a probability of verb.'
+      };
+      root.querySelectorAll('.dots').forEach(group => {
+        const count = group.classList.contains('embedding') ? 8 : group.classList.contains('flat') ? 40 : 16;
+        for(let i=0;i<count;i++) { const dot=document.createElement('span');dot.className='dot';group.append(dot); }
+      });
+      function select(layer) {
+        const selected=Object.hasOwn(descriptions,layer)?layer:'embedding';
+        root.querySelectorAll('[data-stage]').forEach(stage=>stage.classList.toggle('selected',stage.dataset.stage===selected));
+        root.querySelectorAll('[data-layer]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.layer===selected)));
+        root.querySelector('.detail').textContent=descriptions[selected];
+        return selected;
+      }
+      select(window.openai?.widgetState?.modelContent?.layer);
+      root.querySelectorAll('[data-layer]').forEach(button=>button.addEventListener('click',()=>{
+        const layer=select(button.dataset.layer);
+        if(window.openai?.setWidgetState) window.openai.setWidgetState({modelContent:{layer},privateContent:null}).catch(()=>{});
+      }));
+      window.addEventListener('openai:set_globals',event=>{
+        const state=event.detail?.globals?.widgetState;
+        if(state) select(state.modelContent?.layer);
+      });
+    })();
+  </script>
+</div>

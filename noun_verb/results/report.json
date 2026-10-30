@@ -2,7 +2,7 @@
   "seed": 7,
   "vocabulary_size": 287,
   "parameter_count": 3003,
-  "training_seconds": 0.47931495700504456,
+  "training_seconds": 0.4894636119988718,
   "epochs_run": 41,
   "best_epoch": 11,
   "configuration": {

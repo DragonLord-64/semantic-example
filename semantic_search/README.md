@@ -1,5 +1,17 @@
 # Search a file by meaning
 
+## Simplest example: compare two strings
+
+After running setup below, open `compare.py`, edit `TEXT_1` and `TEXT_2`, and press **Run Python File**. Or run it from the repository root:
+
+```bash
+.venv/bin/python semantic_search/compare.py
+```
+
+It turns the two strings into embeddings and prints their cosine similarity. Higher scores mean more similar meanings; the score is not a probability or a percentage. Try replacing the second string with `"The garden needs watering."` and compare the score.
+
+## Setup and file search
+
 Run setup once from the repository root (internet required for installation and model download):
 
 ```bash
