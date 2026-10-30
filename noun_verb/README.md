@@ -13,6 +13,7 @@ Run from the repository root:
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
+python -m pip install --upgrade pip==26.2.2
 pip install -r noun_verb/requirements.txt
 cd noun_verb
 ```
