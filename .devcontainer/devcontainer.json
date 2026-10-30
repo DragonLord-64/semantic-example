@@ -1,0 +1,19 @@
+{
+  "name": "Noun or verb demo",
+  "image": "mcr.microsoft.com/devcontainers/python:3.12-bookworm",
+  "remoteUser": "vscode",
+  "postCreateCommand": "python -m venv /home/vscode/.venvs/semantic-example && /home/vscode/.venvs/semantic-example/bin/python -m pip install --upgrade pip==26.2.2 && /home/vscode/.venvs/semantic-example/bin/python -m pip install -r noun_verb/requirements.txt",
+  "remoteEnv": {
+    "VIRTUAL_ENV": "/home/vscode/.venvs/semantic-example",
+    "PATH": "/home/vscode/.venvs/semantic-example/bin:${containerEnv:PATH}"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": ["ms-python.python"],
+      "settings": {
+        "python.defaultInterpreterPath": "/home/vscode/.venvs/semantic-example/bin/python",
+        "python.terminal.activateEnvironment": false
+      }
+    }
+  }
+}
