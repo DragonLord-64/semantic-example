@@ -19,9 +19,10 @@ def main():
     vector_1, vector_2 = list(model.embed([TEXT_1, TEXT_2]))
 
     # Cosine similarity compares the directions of the two vectors.
-    similarity = np.dot(vector_1, vector_2) / (
-        np.linalg.norm(vector_1) * np.linalg.norm(vector_2)
-    )
+    dot_product = np.dot(vector_1, vector_2)
+    length_1 = np.linalg.norm(vector_1)
+    length_2 = np.linalg.norm(vector_2)
+    similarity = dot_product / (length_1 * length_2)
 
     print(f"Text 1: {TEXT_1}")
     print(f"Text 2: {TEXT_2}")
